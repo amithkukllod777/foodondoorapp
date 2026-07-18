@@ -1,5 +1,5 @@
 /*
- * Nutriwow Admin - Blog Editor
+ * Foodondoor Admin - Blog Editor
  * Features: Rich text editor (textarea + toolbar), header image (upload/AI generate),
  * AI write, AI suggest topics, internal link inserter, SEO fields
  */
@@ -49,7 +49,7 @@ const defaultForm: BlogForm = {
   coverImage: "",
   category: "",
   tags: "",
-  author: "Nutriwow Team",
+  author: "Foodondoor Team",
   seoTitle: "",
   seoDescription: "",
   status: "draft",
@@ -90,7 +90,7 @@ export default function BlogEditor() {
         coverImage: existingBlog.coverImage ?? "",
         category: existingBlog.category || "",
         tags: existingBlog.tags || "",
-        author: existingBlog.author || "Nutriwow Team",
+        author: existingBlog.author || "Foodondoor Team",
         seoTitle: existingBlog.seoTitle || "",
         seoDescription: existingBlog.seoDescription || "",
         status: (existingBlog.status as "draft" | "published") || "draft",
@@ -548,7 +548,7 @@ export default function BlogEditor() {
                   <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
                     <p className="text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-3">Google Preview</p>
                     <div className="space-y-0.5">
-                      <p className="text-[12px] text-gray-500">www.nutriwow.in › blog › {form.slug || "your-post-slug"}</p>
+                      <p className="text-[12px] text-gray-500">www.foodondoor.com › blog › {form.slug || "your-post-slug"}</p>
                       <p className="text-[16px] text-blue-700 font-medium leading-snug">
                         {form.seoTitle || form.title || "Your Blog Title"}
                       </p>

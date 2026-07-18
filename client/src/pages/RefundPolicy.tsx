@@ -15,8 +15,8 @@ export default function RefundPolicy() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title="Refund Policy | Nutriwow"
-        description="Nutriwow's refund policy for premium dry fruits and healthy snacks. Learn about our refund process, timelines, and eligibility criteria."
+        title="Refund Policy | Foodondoor"
+        description="Foodondoor's refund policy for premium dry fruits and healthy snacks. Learn about our refund process, timelines, and eligibility criteria."
         url="/refund-policy"
       />
       <AnnouncementBar />
@@ -33,7 +33,7 @@ export default function RefundPolicy() {
             <section>
               <h2 className="text-lg font-semibold text-foreground mb-2">1. Overview</h2>
               <p>
-                Nutriwow is a brand of <strong>Foodondoor Private Limited</strong>. We are committed to ensuring your complete satisfaction. If you are not satisfied with your purchase, we offer refunds under the conditions outlined in this policy. Please read this policy carefully before placing an order.
+                Foodondoor is a brand of <strong>Foodondoor Private Limited</strong>. We are committed to ensuring your complete satisfaction. If you are not satisfied with your purchase, we offer refunds under the conditions outlined in this policy. Please read this policy carefully before placing an order.
               </p>
             </section>
 
@@ -64,7 +64,7 @@ export default function RefundPolicy() {
               <h2 className="text-lg font-semibold text-foreground mb-2">4. How to Request a Refund</h2>
               <p>To initiate a refund request:</p>
               <ol className="list-decimal pl-5 space-y-1 mt-2">
-                <li>Contact us within <strong>7 days</strong> of delivery via WhatsApp at <strong>+91 95463 34633</strong> or email at <a href="mailto:wecare@nutriwow.in" className="text-primary underline">wecare@nutriwow.in</a>.</li>
+                <li>Contact us within <strong>7 days</strong> of delivery via WhatsApp at <strong>+91 92431 77706</strong> or email at <a href="mailto:wecare@foodondoor.com" className="text-primary underline">wecare@foodondoor.com</a>.</li>
                 <li>Provide your <strong>Order ID</strong> and a brief description of the issue.</li>
                 <li>Attach <strong>photographs</strong> of the damaged/wrong/expired product as evidence.</li>
                 <li>Our team will review your request within <strong>2 business days</strong>.</li>
@@ -102,8 +102,8 @@ export default function RefundPolicy() {
                 For refund-related queries, please contact:<br />
                 <strong>Company:</strong> Foodondoor Private Limited<br />
                 <strong>Address:</strong> Sherpur Square, Indore Bhopal Highway, Sehore, Madhya Pradesh – 466001<br />
-                <strong>Email:</strong> <a href="mailto:wecare@nutriwow.in" className="text-primary underline">wecare@nutriwow.in</a><br />
-                <strong>WhatsApp:</strong> +91 95463 34633<br />
+                <strong>Email:</strong> <a href="mailto:wecare@foodondoor.com" className="text-primary underline">wecare@foodondoor.com</a><br />
+                <strong>WhatsApp:</strong> +91 92431 77706<br />
                 <strong>Hours:</strong> Monday to Saturday, 9 AM – 6 PM IST
               </p>
             </section>

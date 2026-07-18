@@ -1,5 +1,5 @@
 /**
- * Nutriwow - Order Tracking Page
+ * Foodondoor - Order Tracking Page
  * Customers can track their order by Order ID or AWB number
  * Supports ?orderId=NW-XXXX URL query param for deep-link from email
  */
@@ -79,7 +79,7 @@ export default function TrackOrder() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <SEO title="Track Your Order" description="Track your Nutriwow order status and delivery." noIndex />
+      <SEO title="Track Your Order" description="Track your Foodondoor order status and delivery." noIndex />
       <AnnouncementBar />
       <Header />
 
@@ -251,7 +251,7 @@ export default function TrackOrder() {
                   <p className="text-sm font-semibold text-nutrigreen">Need Help?</p>
                   <p className="text-xs text-nutrigreen">
                     Contact us at{" "}
-                    <a href="mailto:wecare@nutriwow.in" className="underline font-medium">wecare@nutriwow.in</a>
+                    <a href="mailto:wecare@foodondoor.com" className="underline font-medium">wecare@foodondoor.com</a>
                     {" "}or WhatsApp us with your Order ID.
                   </p>
                 </div>

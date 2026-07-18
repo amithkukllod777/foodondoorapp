@@ -32,10 +32,10 @@ const OUTPUT_SCHEMA = {
 } as const;
 
 function systemPrompt(input: GenerateInput): string {
-  const store = input.storeName || "Nutriwow";
-  const url = input.storeUrl || "https://nutriwow.in";
+  const store = input.storeName || "Foodondoor";
+  const url = input.storeUrl || "https://foodondoor.com";
   const brand = input.brandColor || "#43A047";
-  const logo = input.logoUrl || "https://nutriwow.in/nutriwow-logo.png";
+  const logo = input.logoUrl || "https://foodondoor.com/foodondoor-logo.png";
   return `You are an expert email marketing designer for ${store}, an Indian premium dry-fruits, nuts & healthy-snacks e-commerce store (${url}).
 
 Produce a COMPLETE, production-ready HTML email. Hard requirements:

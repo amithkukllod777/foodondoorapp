@@ -1,6 +1,6 @@
 /**
  * Contact Us Page
- * Contact information and support details for Nutriwow
+ * Contact information and support details for Foodondoor
  */
 
 import AnnouncementBar from "@/components/AnnouncementBar";
@@ -14,21 +14,21 @@ export default function Contact() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title="Contact Us | Nutriwow - Get in Touch"
-        description="Contact Nutriwow for orders, queries, or support. Reach us via email, phone, or WhatsApp. Located in Sehore, Madhya Pradesh."
+        title="Contact Us | Foodondoor - Get in Touch"
+        description="Contact Foodondoor for orders, queries, or support. Reach us via email, phone, or WhatsApp. Located in Sehore, Madhya Pradesh."
         url="/contact"
         keywords="contact nutriwow, nutriwow customer care, nutriwow phone number, nutriwow email, nutriwow address"
         jsonLd={[{
           "@context": "https://schema.org",
           "@type": "ContactPage",
-          name: "Contact Nutriwow",
-          url: "https://www.nutriwow.in/contact",
+          name: "Contact Foodondoor",
+          url: "https://www.foodondoor.com/contact",
           mainEntity: {
             "@type": "LocalBusiness",
-            name: "Nutriwow",
-            telephone: "+91-95463-34633",
-            email: "wecare@nutriwow.in",
-            url: "https://www.nutriwow.in",
+            name: "Foodondoor",
+            telephone: "+91-92431-77706",
+            email: "wecare@foodondoor.com",
+            url: "https://www.foodondoor.com",
             address: {
               "@type": "PostalAddress",
               streetAddress: "Sherpur Square, Indore Bhopal Highway",
@@ -55,7 +55,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
             {/* Email */}
             <a
-              href="mailto:wecare@nutriwow.in"
+              href="mailto:wecare@foodondoor.com"
               className="flex items-start gap-4 bg-white rounded-xl border border-border p-5 hover:shadow-md transition-shadow"
             >
               <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -63,13 +63,13 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-foreground">Email</p>
-                <p className="text-sm text-muted-foreground mt-0.5">wecare@nutriwow.in</p>
+                <p className="text-sm text-muted-foreground mt-0.5">wecare@foodondoor.com</p>
               </div>
             </a>
 
             {/* Phone */}
             <a
-              href="tel:+919546334633"
+              href="tel:+919243177706"
               className="flex items-start gap-4 bg-white rounded-xl border border-border p-5 hover:shadow-md transition-shadow"
             >
               <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
@@ -77,13 +77,13 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-foreground">Phone</p>
-                <p className="text-sm text-muted-foreground mt-0.5">+91 95463 34633</p>
+                <p className="text-sm text-muted-foreground mt-0.5">+91 92431 77706</p>
               </div>
             </a>
 
             {/* WhatsApp */}
             <a
-              href="https://wa.me/919546334633"
+              href="https://wa.me/919243177706"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-start gap-4 bg-white rounded-xl border border-border p-5 hover:shadow-md transition-shadow"
@@ -137,7 +137,7 @@ export default function Contact() {
             <p className="text-sm font-semibold text-foreground mb-3">Follow Us</p>
             <div className="flex items-center gap-4">
               <a
-                href="https://facebook.com/nutriwowindia"
+                href="https://facebook.com/foodondoor.in"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -146,7 +146,7 @@ export default function Contact() {
                 <span>Facebook</span>
               </a>
               <a
-                href="https://instagram.com/nutriwowindia"
+                href="https://instagram.com/foodondoor"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"

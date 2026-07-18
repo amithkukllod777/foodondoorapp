@@ -21,7 +21,7 @@ const money = (n: number) =>
   });
 
 // ── Logo/stamp loading ─────────────────────────────────────────────
-const ASSET_BASE = (process.env.PUBLIC_SITE_URL || "https://www.nutriwow.in").replace(/\/$/, "");
+const ASSET_BASE = (process.env.PUBLIC_SITE_URL || "https://www.foodondoor.com").replace(/\/$/, "");
 const _logoCache = new Map<string, Uint8Array | null>();
 
 async function fetchBytes(url: string): Promise<Uint8Array | null> {
@@ -265,18 +265,18 @@ export async function generateInvoicePdf(inv: Inv): Promise<Uint8Array> {
     color: grey,
   });
   y -= 11;
-  text(page, `Thank you for shopping with ${inv.seller?.name || "Nutriwow"}!  ${inv.seller?.email || ""}`, M, y, {
+  text(page, `Thank you for shopping with ${inv.seller?.name || "Foodondoor"}!  ${inv.seller?.email || ""}`, M, y, {
     size: 8,
     color: green,
     f: bold,
   });
 
   // ── Brands strip (bottom-LEFT): the brands that sit under Foodondoor —
-  // Nutriwow, Kuddle Super Meal, Mr Healthybite. ──
+  // Foodondoor, Kuddle Super Meal, Mr Healthybite. ──
   const headY = 155;
   text(page, "OUR BRANDS", M, headY, { size: 8, f: bold, color: green });
   const brandRow: Array<{ img: PDFImage | null; name: string }> = [
-    { img: nutriLogo, name: "Nutriwow" },
+    { img: nutriLogo, name: "Foodondoor" },
     { img: kuddleLogo, name: "Kuddle" },
     { img: healthybiteLogo, name: "Mr Healthybite" },
     { img: nutridayLogo, name: "Nutriday" },

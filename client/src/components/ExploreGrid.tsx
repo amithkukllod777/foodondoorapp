@@ -107,7 +107,7 @@ export default function ExploreGrid({ title, products, viewAllLink, loading }: E
 
                   {/* Content */}
                   <div className="px-2 pb-2 flex flex-col flex-1">
-                    <p className="text-[10px] text-nutrigold font-semibold mb-0.5 uppercase tracking-wide">Nutriwow</p>
+                    <p className="text-[10px] text-nutrigold font-semibold mb-0.5 uppercase tracking-wide">Foodondoor</p>
                     <Link
                       href={`/products/${product.handle}`}
                       className="text-[11px] font-medium text-foreground line-clamp-2 hover:text-primary transition-colors mb-1.5 leading-relaxed"

@@ -24,7 +24,7 @@ describe("Facebook Conversions API", () => {
         contentType: "product",
         contentName: "Test Almonds",
       },
-      "https://www.nutriwow.in/products/test"
+      "https://www.foodondoor.com/products/test"
     );
 
     expect(result.success).toBe(true);

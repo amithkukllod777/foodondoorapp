@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Foodondoor">
+  <rect width="64" height="64" rx="14" fill="#1A34A8"/>
+  <!-- Tricolor swoosh (saffron / white / green) -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M17 50 C 28 46, 38 34, 49 18" stroke="#F5A21E" stroke-width="3.4"/>
+    <path d="M17 52.4 C 28 48.4, 38 36.4, 49 20.4" stroke="#ffffff" stroke-width="2.4"/>
+    <path d="M17 54.8 C 28 50.8, 38 38.8, 49 22.8" stroke="#3AAA2E" stroke-width="3.4"/>
+  </g>
+  <!-- F letterform -->
+  <g fill="#ffffff">
+    <rect x="22" y="15" width="7.5" height="34" rx="2.5"/>
+    <rect x="22" y="15" width="22" height="7.5" rx="2.5"/>
+    <rect x="22" y="28" width="16" height="6.5" rx="2.5"/>
+  </g>
+</svg>

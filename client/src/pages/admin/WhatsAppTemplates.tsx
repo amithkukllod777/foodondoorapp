@@ -195,7 +195,7 @@ export default function WhatsAppTemplates() {
             <div>
               <label className="block text-sm font-medium mb-1">Button URL (Required)</label>
               <Input
-                placeholder="https://www.nutriwow.in/collections/all"
+                placeholder="https://www.foodondoor.com/collections/all"
                 value={formData.buttonUrl}
                 onChange={(e) => setFormData({ ...formData, buttonUrl: e.target.value })}
               />

@@ -195,7 +195,7 @@ export default function PaymentStatus() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <SEO title="Payment Status | Nutriwow" description="" noIndex={true} />
+      <SEO title="Payment Status | Foodondoor" description="" noIndex={true} />
       <AnnouncementBar />
       <Header />
 

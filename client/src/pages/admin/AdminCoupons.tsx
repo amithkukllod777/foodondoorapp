@@ -1,5 +1,5 @@
 /*
- * Nutriwow Admin - Coupons Page (DB-backed via tRPC)
+ * Foodondoor Admin - Coupons Page (DB-backed via tRPC)
  * Shopify-style: clean table, slide-over create panel, toggle active/inactive
  */
 

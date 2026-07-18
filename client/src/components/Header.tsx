@@ -99,8 +99,8 @@ export default function Header() {
           {/* Logo */}
           <a href="/" className="flex-shrink-0">
             <img
-              src="/nutriwow-logo.png"
-              alt="Nutriwow"
+              src="/foodondoor-logo.png"
+              alt="Foodondoor"
               className="h-10 sm:h-12"
             />
           </a>
@@ -237,7 +237,7 @@ export default function Header() {
               {showUserDropdown && isLoggedIn && (
                 <div className="absolute right-0 top-full mt-2 w-56 bg-card rounded-2xl shadow-clay-lg py-2 z-50">
                   <div className="px-4 py-2 border-b border-border">
-                    <p className="font-semibold text-foreground text-sm">{user?.name || "Nutriwow User"}</p>
+                    <p className="font-semibold text-foreground text-sm">{user?.name || "Foodondoor User"}</p>
                     <p className="text-xs text-muted-foreground/70">+91 {user?.mobile}</p>
                   </div>
                   <button
@@ -429,7 +429,7 @@ export default function Header() {
                           : user?.mobile?.slice(-2)}
                       </div>
                       <div>
-                        <p className="text-sm font-semibold text-foreground">{user?.name || "Nutriwow User"}</p>
+                        <p className="text-sm font-semibold text-foreground">{user?.name || "Foodondoor User"}</p>
                         <p className="text-xs text-muted-foreground/70">+91 {user?.mobile}</p>
                       </div>
                     </div>

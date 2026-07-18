@@ -1,5 +1,5 @@
 /*
- * Nutriwow Admin - Products Page
+ * Foodondoor Admin - Products Page
  * Fully DB-backed via tRPC — no localStorage
  */
 
@@ -326,7 +326,7 @@ function ProductFormPanel({ product, onClose, onSaved }: {
             <label className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider block mb-1.5">Product Name *</label>
             <input value={form.name} onChange={e => { set("name", e.target.value); if (!form.handle) set("handle", generateHandle(e.target.value)); }}
               className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
-              placeholder="e.g. Nutriwow Premium Cashews 200g" />
+              placeholder="e.g. Foodondoor Premium Cashews 200g" />
           </div>
 
           <div>

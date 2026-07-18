@@ -1,5 +1,5 @@
 /*
- * Nutriwow Admin - Blog Management Page
+ * Foodondoor Admin - Blog Management Page
  * Shows all blogs with status badges, publish/unpublish/delete actions
  * Links to BlogEditor for create/edit
  */

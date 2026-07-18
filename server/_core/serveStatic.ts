@@ -3,9 +3,9 @@ import fs from "fs";
 import path from "path";
 import { getProductByHandle, getBlogPostBySlug, getProductsByCategory, getBestsellers } from "../db";
 
-const SITE_URL = "https://www.nutriwow.in";
-const SITE_NAME = "Nutriwow";
-const DEFAULT_TITLE = "Nutriwow | Premium Dry Fruits & Healthy Snacks Online";
+const SITE_URL = "https://www.foodondoor.com";
+const SITE_NAME = "Foodondoor";
+const DEFAULT_TITLE = "Foodondoor | Premium Dry Fruits & Healthy Snacks Online";
 const DEFAULT_DESC = "Buy premium dry fruits, nuts, seeds & healthy snacks online. Free delivery, best prices, 100% quality assured.";
 const DEFAULT_IMAGE = `${SITE_URL}/og-image.png`;
 
@@ -76,7 +76,7 @@ function buildCategoryBody(displayName: string, slug: string, products: { name: 
   return `<main style="max-width:1100px;margin:0 auto;padding:16px;font-family:sans-serif">
   <nav aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <span>${escapeHtml(displayName)}</span></nav>
   <h1>Buy ${escapeHtml(displayName)} Online</h1>
-  <p>Shop premium ${escapeHtml(displayName.toLowerCase())} at Nutriwow — 100% natural, no preservatives, free delivery across India.</p>
+  <p>Shop premium ${escapeHtml(displayName.toLowerCase())} at Foodondoor — 100% natural, no preservatives, free delivery across India.</p>
   ${items ? `<ul>${items}</ul>` : ""}
 </main>`;
 }
@@ -89,7 +89,7 @@ function buildBlogBody(post: { title: string; content?: string | null; excerpt?:
   <nav aria-label="Breadcrumb"><a href="/">Home</a> &rsaquo; <a href="/blog">Blog</a> &rsaquo; <span>${escapeHtml(post.title)}</span></nav>
   <article>
     <h1>${escapeHtml(post.title)}</h1>
-    <p>By ${escapeHtml(post.author || "Nutriwow Team")} · ${date}</p>
+    <p>By ${escapeHtml(post.author || "Foodondoor Team")} · ${date}</p>
     ${post.coverImage ? `<img src="${escapeHtml(post.coverImage)}" alt="${escapeHtml(post.title)}" width="700" />` : ""}
     ${body}
   </article>
@@ -104,7 +104,7 @@ function buildHomeBody(products: { name: string; handle: string; price: number }
   ).join("");
   return `<main style="max-width:1100px;margin:0 auto;padding:16px;font-family:sans-serif">
   <h1>Buy Premium Dry Fruits, Nuts &amp; Healthy Snacks Online</h1>
-  <p>Nutriwow — 100% natural dry fruits, nuts, seeds and healthy snacks. No preservatives, free shipping above ₹499 across India.</p>
+  <p>Foodondoor — 100% natural dry fruits, nuts, seeds and healthy snacks. No preservatives, free shipping above ₹499 across India.</p>
   <h2>Shop by Category</h2>
   <ul>${catLinks}</ul>
   ${items ? `<h2>Bestsellers</h2><ul>${items}</ul>` : ""}

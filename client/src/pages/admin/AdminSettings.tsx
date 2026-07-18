@@ -216,7 +216,7 @@ function LogoUpload({ label, hint, value, onChange, round = false }: {
 function GeneralTab() {
   const { get, saveMany, saving } = useSettings();
   const defaults = {
-    storeName: "Nutriwow", storeEmail: "wecare@nutriwow.in", storePhone: "+91 95463 34633",
+    storeName: "Foodondoor", storeEmail: "wecare@foodondoor.com", storePhone: "+91 92431 77706",
     storeCurrency: "INR", storeTimezone: "Asia/Kolkata", storeAddress: "123, Business Park",
     storeCity: "Mumbai", storeState: "Maharashtra", storePincode: "400001",
     storeGST: "", storeLogo: "", storeFavicon: "", gscVerification: ""
@@ -246,13 +246,13 @@ function GeneralTab() {
     <div>
       <SectionCard title="Store details" subtitle="Basic information about your store">
         <FormRow label="Store name" hint="Appears on receipts and emails">
-          <Input value={store.storeName} onChange={v => setStore(s => ({ ...s, storeName: v }))} placeholder="Nutriwow" />
+          <Input value={store.storeName} onChange={v => setStore(s => ({ ...s, storeName: v }))} placeholder="Foodondoor" />
         </FormRow>
         <FormRow label="Store email" hint="Used for order confirmations">
-          <Input value={store.storeEmail} onChange={v => setStore(s => ({ ...s, storeEmail: v }))} placeholder="wecare@nutriwow.in" type="email" />
+          <Input value={store.storeEmail} onChange={v => setStore(s => ({ ...s, storeEmail: v }))} placeholder="wecare@foodondoor.com" type="email" />
         </FormRow>
         <FormRow label="Phone number">
-          <Input value={store.storePhone} onChange={v => setStore(s => ({ ...s, storePhone: v }))} placeholder="+91 95463 34633" />
+          <Input value={store.storePhone} onChange={v => setStore(s => ({ ...s, storePhone: v }))} placeholder="+91 92431 77706" />
         </FormRow>
         <FormRow label="GST Number" hint="GSTIN for tax invoices">
           <Input value={store.storeGST} onChange={v => setStore(s => ({ ...s, storeGST: v }))} placeholder="27AABCU9603R1ZX" />
@@ -292,7 +292,7 @@ function GeneralTab() {
         </FormRow>
       </SectionCard>
       <SectionCard title="Brand & invoice logos" subtitle="Logos and seal used on the GST invoice PDF and storefront footer. PNG with transparent background works best.">
-        <LogoUpload label="Nutriwow logo" hint="Brand under Foodondoor — footer & invoice"
+        <LogoUpload label="Foodondoor logo" hint="Brand under Foodondoor — footer & invoice"
           value={brand.nutriwowLogo} onChange={v => setBrand(s => ({ ...s, nutriwowLogo: v }))} />
         <LogoUpload label="Foodondoor logo" hint="Shown on the invoice header (legal entity)"
           value={brand.foodondoorLogo} onChange={v => setBrand(s => ({ ...s, foodondoorLogo: v }))} />
@@ -307,7 +307,7 @@ function GeneralTab() {
         <LogoUpload label="Nutriday logo" hint="Brand under Foodondoor — footer & invoice"
           value={brand.nutridayLogo} onChange={v => setBrand(s => ({ ...s, nutridayLogo: v }))} />
       </SectionCard>
-      <SectionCard title="Mobile app" subtitle="Display options for the Nutriwow Android/iOS app">
+      <SectionCard title="Mobile app" subtitle="Display options for the Foodondoor Android/iOS app">
         <FormRow label="Show veg mark on products" hint="Green veg indicator on product cards in the app (off = clean image)">
           <Toggle checked={appCfg.vegMark} onChange={v => setAppCfg(s => ({ ...s, vegMark: v }))} />
         </FormRow>
@@ -412,8 +412,8 @@ const ROLE_BADGE: Record<StaffRole, string> = {
 function UsersTab() {
   const { get } = useSettings();
   const general = get("general", {}) as { storeName?: string; storeEmail?: string };
-  const ownerName = general?.storeName || "Nutriwow Admin";
-  const ownerEmail = general?.storeEmail || "wecare@nutriwow.in";
+  const ownerName = general?.storeName || "Foodondoor Admin";
+  const ownerEmail = general?.storeEmail || "wecare@foodondoor.com";
 
   const utils = trpc.useUtils();
   const { data: members = [], isLoading } = trpc.adminUsers.getAll.useQuery();
@@ -656,9 +656,9 @@ function PaymentsTab() {
               <div>
                 <label className="text-[12px] font-medium text-gray-600 mb-1 block">Webhook URL (add in PhonePe dashboard)</label>
                 <div className="flex gap-2">
-                  <input readOnly value="https://nutriwow.in/api/phonepe/webhook"
+                  <input readOnly value="https://foodondoor.com/api/phonepe/webhook"
                     className="flex-1 px-3 py-2 text-[13px] bg-gray-50 border border-gray-300 rounded-lg text-gray-500" />
-                  <button onClick={() => { navigator.clipboard.writeText("https://nutriwow.in/api/phonepe/webhook"); toast.success("Copied!"); }}
+                  <button onClick={() => { navigator.clipboard.writeText("https://foodondoor.com/api/phonepe/webhook"); toast.success("Copied!"); }}
                     className="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 text-gray-500">
                     <Copy size={14} />
                   </button>
@@ -758,9 +758,9 @@ function PaymentsTab() {
               <div>
                 <label className="text-[12px] font-medium text-gray-600 mb-1 block">Webhook URL (add in Razorpay dashboard)</label>
                 <div className="flex gap-2">
-                  <input readOnly value="https://nutriwow.in/api/razorpay/webhook"
+                  <input readOnly value="https://foodondoor.com/api/razorpay/webhook"
                     className="flex-1 px-3 py-2 text-[13px] bg-gray-50 border border-gray-300 rounded-lg text-gray-500" />
-                  <button onClick={() => { navigator.clipboard.writeText("https://nutriwow.in/api/razorpay/webhook"); toast.success("Copied!"); }}
+                  <button onClick={() => { navigator.clipboard.writeText("https://foodondoor.com/api/razorpay/webhook"); toast.success("Copied!"); }}
                     className="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 text-gray-500">
                     <Copy size={14} />
                   </button>
@@ -1248,13 +1248,13 @@ function BillingTab() {
       </div>
       <SectionCard title="Billing details" subtitle="Used on customer invoices and receipts">
         <FormRow label="Business name">
-          <Input value={settings.businessName} onChange={v => setSettings(s => ({ ...s, businessName: v }))} placeholder="Nutriwow" />
+          <Input value={settings.businessName} onChange={v => setSettings(s => ({ ...s, businessName: v }))} placeholder="Foodondoor" />
         </FormRow>
         <FormRow label="GSTIN" hint="Your GST registration number">
           <Input value={settings.gstin} onChange={v => setSettings(s => ({ ...s, gstin: v }))} placeholder="22AAAAA0000A1Z5" />
         </FormRow>
         <FormRow label="Billing email" hint="Where provider receipts are sent">
-          <Input type="email" value={settings.billingEmail} onChange={v => setSettings(s => ({ ...s, billingEmail: v }))} placeholder="billing@nutriwow.in" />
+          <Input type="email" value={settings.billingEmail} onChange={v => setSettings(s => ({ ...s, billingEmail: v }))} placeholder="billing@foodondoor.com" />
         </FormRow>
         <FormRow label="Billing address">
           <Input value={settings.billingAddress} onChange={v => setSettings(s => ({ ...s, billingAddress: v }))} placeholder="Registered business address" />
@@ -1267,9 +1267,9 @@ function BillingTab() {
 
 function ChannelsTab() {
   const [, navigate] = useLocation();
-  // Live channels — what Nutriwow actually sells through today.
+  // Live channels — what Foodondoor actually sells through today.
   const live = [
-    { name: "Online Store", icon: "🌐", desc: "www.nutriwow.in — your main website" },
+    { name: "Online Store", icon: "🌐", desc: "www.foodondoor.com — your main website" },
     { name: "WhatsApp Business", icon: "💬", desc: "OTP login, order updates & campaigns" },
   ];
   // Catalog channels are powered by the product feeds in the Integrations tab.
@@ -1343,7 +1343,7 @@ function DomainsTab() {
           <div className="flex items-center justify-between">
             <div>
               <p className="text-[13px] font-semibold text-gray-800">
-                {customDomain || "www.nutriwow.in"}
+                {customDomain || "www.foodondoor.com"}
               </p>
               <p className="text-[11px] text-gray-400">Primary domain</p>
             </div>
@@ -1363,9 +1363,9 @@ function DomainsTab() {
         )}
         <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
           <p className="text-[13px] font-semibold text-blue-800 mb-1">Connect a custom domain</p>
-          <p className="text-[12px] text-blue-600 mb-3">Use your own domain like www.nutriwow.in to build brand trust. Add it in your Vercel project's Domains settings, then save it here.</p>
+          <p className="text-[12px] text-blue-600 mb-3">Use your own domain like www.foodondoor.com to build brand trust. Add it in your Vercel project's Domains settings, then save it here.</p>
           <div className="flex gap-2">
-            <Input value={draft} onChange={setDraft} placeholder="www.nutriwow.in" />
+            <Input value={draft} onChange={setDraft} placeholder="www.foodondoor.com" />
             <button
               onClick={connect}
               disabled={saving}
@@ -1425,7 +1425,7 @@ function NotificationsTab() {
   const defaults = {
     newOrder: true, orderShipped: true, orderDelivered: true, lowStock: true,
     newCustomer: false, abandonedCart: true, reviewReceived: false,
-    emailFrom: "noreply@nutriwow.in", whatsappEnabled: true, whatsappNumber: "+91 95463 34633"
+    emailFrom: "noreply@foodondoor.com", whatsappEnabled: true, whatsappNumber: "+91 92431 77706"
   };
   const [settings, setSettings] = useState(defaults);
   const loaded = get("notifications", null);
@@ -1452,7 +1452,7 @@ function NotificationsTab() {
       </SectionCard>
       <SectionCard title="Email settings">
         <FormRow label="Send from email" hint="Configure in Email → Resend Settings (current sender configured there)">
-          <Input value={settings.emailFrom} onChange={v => setSettings(s => ({ ...s, emailFrom: v }))} placeholder="noreply@nutriwow.in" type="email" />
+          <Input value={settings.emailFrom} onChange={v => setSettings(s => ({ ...s, emailFrom: v }))} placeholder="noreply@foodondoor.com" type="email" />
         </FormRow>
       </SectionCard>
       <SectionCard title="WhatsApp notifications" subtitle="Send order updates via WhatsApp Business API">
@@ -1461,7 +1461,7 @@ function NotificationsTab() {
         </FormRow>
         {settings.whatsappEnabled && (
           <FormRow label="WhatsApp Business number">
-            <Input value={settings.whatsappNumber} onChange={v => setSettings(s => ({ ...s, whatsappNumber: v }))} placeholder="+91 95463 34633" />
+            <Input value={settings.whatsappNumber} onChange={v => setSettings(s => ({ ...s, whatsappNumber: v }))} placeholder="+91 92431 77706" />
           </FormRow>
         )}
       </SectionCard>
@@ -1745,11 +1745,11 @@ function IntegrationsTab() {
   const s = (key: string) => (settings as Record<string, string>)[key] || "";
   const u = (key: string, v: string) => setSettings(prev => ({ ...prev, [key]: v }));
 
-  const FEED_BASE = "https://nutriwow.in";
+  const FEED_BASE = "https://foodondoor.com";
   const FEED_URLS = [
     { label: "Google Shopping / Microsoft Bing", url: `${FEED_BASE}/feed/google-shopping.xml`, icon: "🛒",
       hint: "Google Merchant Center → Products → Feeds → Add feed → Scheduled fetch.", platform: "Google Merchant Center / Bing", link: "https://merchants.google.com",
-      steps: ["Sign in at merchants.google.com and create a Merchant Center account (free).", "Business info → add & verify your website nutriwow.in.", "Products → Feeds → click ➕ → Country: India, Language: English.", "Method: choose \"Scheduled fetch\".", "Paste the feed URL above; set fetch frequency to Daily.", "Bing: at ads.microsoft.com → Tools → Microsoft Merchant Center, import the SAME URL."] },
+      steps: ["Sign in at merchants.google.com and create a Merchant Center account (free).", "Business info → add & verify your website foodondoor.com.", "Products → Feeds → click ➕ → Country: India, Language: English.", "Method: choose \"Scheduled fetch\".", "Paste the feed URL above; set fetch frequency to Daily.", "Bing: at ads.microsoft.com → Tools → Microsoft Merchant Center, import the SAME URL."] },
     { label: "Meta Catalog — Facebook & Instagram (XML)", url: `${FEED_BASE}/feed/facebook-catalog.xml`, icon: "📘",
       hint: "Meta Commerce Manager → Catalog → Data sources → Add data feed.", platform: "Meta Commerce Manager", link: "https://business.facebook.com/commerce",
       steps: ["Go to business.facebook.com → Commerce Manager.", "Create a catalog → type \"E-commerce\".", "Data sources → Add items → \"Use a data feed\".", "Paste the XML feed URL; set currency INR, Upload schedule Daily.", "Connect the catalog to your Facebook Page and Instagram."] },
@@ -1758,7 +1758,7 @@ function IntegrationsTab() {
       steps: ["Same path as the Meta XML feed.", "Paste this CSV URL instead of the XML one."] },
     { label: "Pinterest Catalog", url: `${FEED_BASE}/feed/google-shopping.xml`, icon: "📌",
       hint: "Pinterest → Ads → Catalogs → Connect a data source. Pinterest accepts Google Shopping format.", platform: "Pinterest Business", link: "https://www.pinterest.com/business/hub/",
-      steps: ["Sign in to a Pinterest Business account.", "Claim your website nutriwow.in.", "Ads → Catalogs → \"Connect a data source\".", "Paste the feed URL, set currency INR, daily refresh."] },
+      steps: ["Sign in to a Pinterest Business account.", "Claim your website foodondoor.com.", "Ads → Catalogs → \"Connect a data source\".", "Paste the feed URL, set currency INR, daily refresh."] },
     { label: "Snapchat Catalog", url: `${FEED_BASE}/feed/facebook-catalog.csv`, icon: "👻",
       hint: "Snapchat Ads Manager → Assets → Catalogs → Create from feed URL.", platform: "Snapchat Ads Manager", link: "https://ads.snapchat.com",
       steps: ["Snapchat Ads Manager → Assets → Catalogs.", "Create catalog → \"Connect a data feed\".", "Paste the CSV URL; currency INR, Daily fetch."] },

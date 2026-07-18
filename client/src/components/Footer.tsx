@@ -14,8 +14,8 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <img
-              src="/nutriwow-logo.png"
-              alt="Nutriwow"
+              src="/foodondoor-logo.png"
+              alt="Foodondoor"
               className="h-10 mb-4 brightness-0 invert"
             />
             <p className="text-xs leading-relaxed mb-4" style={{ color: "#9E9E9E" }}>
@@ -23,7 +23,7 @@ export default function Footer() {
             </p>
             <div className="flex gap-3 mb-4">
               <a
-                href="https://www.facebook.com/nutriwowindia"
+                href="https://www.facebook.com/foodondoor.in"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full flex items-center justify-center shadow-md transition-all hover:opacity-80"
@@ -33,7 +33,7 @@ export default function Footer() {
                 <Facebook size={15} className="text-white" />
               </a>
               <a
-                href="https://www.instagram.com/nutriwowindia"
+                href="https://www.instagram.com/foodondoor"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full flex items-center justify-center shadow-md transition-all hover:opacity-80"
@@ -43,7 +43,7 @@ export default function Footer() {
                 <Instagram size={15} className="text-white" />
               </a>
               <a
-                href="https://wa.me/919546334633"
+                href="https://wa.me/919243177706"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full flex items-center justify-center shadow-md transition-all hover:opacity-80"
@@ -57,12 +57,12 @@ export default function Footer() {
             <div className="mt-4 mb-3">
               <p className="text-[10px] font-semibold mb-2 tracking-wider" style={{ color: "#9E9E9E" }}>DOWNLOAD APP</p>
               <a
-                href="https://play.google.com/store/apps/details?id=in.nutriwow.app"
+                href="https://play.google.com/store/apps/details?id=com.foodondoor.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 rounded-xl px-3.5 py-2.5 border transition-colors hover:border-gray-500"
                 style={{ background: "#111111", borderColor: "#3A3A3A" }}
-                aria-label="Download Nutriwow on Google Play"
+                aria-label="Download Foodondoor on Google Play"
               >
                 <svg viewBox="0 0 24 24" className="w-5 h-5 flex-shrink-0" fill="none">
                   <path d="M3.61 1.814L13.792 12 3.61 22.186C3.22 21.976 3 21.576 3 21.1V2.9c0-.476.22-.876.61-1.086z" fill="#4285F4"/>
@@ -141,23 +141,23 @@ export default function Footer() {
             <h3 className="text-sm font-bold text-white mb-4">Contact Support</h3>
             <div className="space-y-3">
               <a
-                href="mailto:wecare@nutriwow.in"
+                href="mailto:wecare@foodondoor.com"
                 className="flex items-center gap-2 text-xs hover:text-amber-400 transition-colors"
                 style={{ color: "#9E9E9E" }}
               >
                 <Mail size={14} className="text-amber-400 flex-shrink-0" />
-                wecare@nutriwow.in
+                wecare@foodondoor.com
               </a>
               <a
-                href="tel:+919546334633"
+                href="tel:+919243177706"
                 className="flex items-center gap-2 text-xs hover:text-amber-400 transition-colors"
                 style={{ color: "#9E9E9E" }}
               >
                 <Phone size={14} className="text-amber-400 flex-shrink-0" />
-                +91 95463 34633
+                +91 92431 77706
               </a>
               <a
-                href="https://wa.me/919546334633"
+                href="https://wa.me/919243177706"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-xs hover:text-amber-400 transition-colors"
@@ -291,7 +291,7 @@ export default function Footer() {
           {/* Bottom Bar */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
             <p className="text-[11px]" style={{ color: "#616161" }}>
-              &copy; 2026 Nutriwow | Foodondoor Private Limited. All rights reserved.
+              &copy; 2026 Foodondoor | Foodondoor Private Limited. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
               <LanguageSwitcher />

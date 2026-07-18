@@ -29,7 +29,7 @@ export default function Wishlist() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <SEO title="My Wishlist" description="Your saved favourite products on Nutriwow" noIndex />
+      <SEO title="My Wishlist" description="Your saved favourite products on Foodondoor" noIndex />
       <AnnouncementBar />
       <Header />
 

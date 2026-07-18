@@ -1,5 +1,5 @@
 /*
- * Nutriwow Admin Store
+ * Foodondoor Admin Store
  * Manages products and orders using localStorage for persistence
  * Updated to use new product schema: price (not salePrice), available (not inStock)
  */

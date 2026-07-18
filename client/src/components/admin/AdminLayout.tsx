@@ -1,5 +1,5 @@
 /*
- * Nutriwow Admin Panel - Shopify-style Layout
+ * Foodondoor Admin Panel - Shopify-style Layout
  * Design: Dark sidebar (#1c1c1e), white content area, green accent
  * Inspired by Shopify admin: clean, professional, data-dense
  */
@@ -88,7 +88,7 @@ export default function AdminLayout({ children, title, subtitle, actions }: Admi
           <div className="w-7 h-7 rounded-md bg-[#43A047] flex items-center justify-center flex-shrink-0">
             <Store size={14} className="text-white" />
           </div>
-          <span className="text-[13px] font-semibold text-white">Nutriwow Admin</span>
+          <span className="text-[13px] font-semibold text-white">Foodondoor Admin</span>
         </Link>
         {onClose && (
           <button onClick={onClose} className="text-white/40 hover:text-white p-1">

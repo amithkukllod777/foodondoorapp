@@ -23,8 +23,8 @@ import { trpc } from "@/lib/trpc";
 import { Gift, Building2, Sparkles, Heart, MessageCircle } from "lucide-react";
 
 const CORP_WHATSAPP =
-  "https://wa.me/919546334633?text=" +
-  encodeURIComponent("Hi Nutriwow! I'd like to enquire about corporate / bulk gifting.");
+  "https://wa.me/919243177706?text=" +
+  encodeURIComponent("Hi Foodondoor! I'd like to enquire about corporate / bulk gifting.");
 
 const OCCASIONS = [
   { label: "Diwali", emoji: "🪔" },
@@ -63,7 +63,7 @@ export default function Gifting() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title="Gift Hampers & Corporate Gifting | Nutriwow"
+        title="Gift Hampers & Corporate Gifting | Foodondoor"
         description="Premium dry-fruit gift hampers for Diwali, Rakhi, weddings, birthdays and corporate gifting. Curated, natural, beautifully packed. Free shipping across India."
         url="/gifting"
         keywords="dry fruit gift hampers, corporate gifting India, diwali gift box, rakhi gifts, premium gift hampers, nutriwow gifting"
@@ -86,7 +86,7 @@ export default function Gifting() {
                 <Sparkles size={12} /> Curated Gift Hampers
               </span>
               <h1 className="text-3xl sm:text-4xl font-bold font-serif text-clay-brown leading-tight">
-                Gift wellness.<br />Gift Nutriwow.
+                Gift wellness.<br />Gift Foodondoor.
               </h1>
               <p className="text-sm text-clay-brown/80 mt-3">
                 Beautifully packed dry-fruit hampers for every occasion — festive, corporate, or just because. 100% natural, freshly packed, delivered across India.

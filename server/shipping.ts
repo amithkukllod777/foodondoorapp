@@ -467,7 +467,7 @@ export async function ithinkCreateShipment(input: ShipOrderInput): Promise<ShipO
             country: "India",
             phone: input.phone,
             alt_phone: input.phone,
-            email: input.email || "orders@nutriwow.in",
+            email: input.email || "orders@foodondoor.com",
             is_billing_same_as_shipping: "yes",
             billing_name: input.customerName,
             billing_company_name: "",
@@ -480,7 +480,7 @@ export async function ithinkCreateShipment(input: ShipOrderInput): Promise<ShipO
             billing_country: "India",
             billing_phone: input.phone,
             billing_alt_phone: input.phone,
-            billing_email: input.email || "orders@nutriwow.in",
+            billing_email: input.email || "orders@foodondoor.com",
             products: input.items.map((i) => ({
               product_name: i.name,
               product_sku: i.sku || `SKU-${i.name.replace(/\s+/g, "").slice(0, 6)}`,

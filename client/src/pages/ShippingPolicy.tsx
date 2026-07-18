@@ -15,8 +15,8 @@ export default function ShippingPolicy() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title="Shipping Policy | Nutriwow"
-        description="Learn about Nutriwow's shipping policy, delivery timelines, charges, and coverage across India for premium dry fruits and healthy snacks."
+        title="Shipping Policy | Foodondoor"
+        description="Learn about Foodondoor's shipping policy, delivery timelines, charges, and coverage across India for premium dry fruits and healthy snacks."
         url="/shipping-policy"
       />
       <AnnouncementBar />
@@ -33,7 +33,7 @@ export default function ShippingPolicy() {
             <section>
               <h2 className="text-lg font-semibold text-foreground mb-2">1. Shipping Coverage</h2>
               <p>
-                Nutriwow, a brand of <strong>Foodondoor Private Limited</strong>, ships to all major cities and towns across India. We use trusted logistics partners including <strong>Shiprocket</strong> and <strong>iThink Logistics</strong> to ensure safe and timely delivery of your orders.
+                Foodondoor, a brand of <strong>Foodondoor Private Limited</strong>, ships to all major cities and towns across India. We use trusted logistics partners including <strong>Shiprocket</strong> and <strong>iThink Logistics</strong> to ensure safe and timely delivery of your orders.
               </p>
             </section>
 
@@ -117,7 +117,7 @@ export default function ShippingPolicy() {
             <section>
               <h2 className="text-lg font-semibold text-foreground mb-2">8. Incorrect Address</h2>
               <p>
-                Please ensure your delivery address is complete and accurate at the time of placing the order. Nutriwow India is not responsible for non-delivery due to incorrect or incomplete address provided by the customer. Address changes after dispatch may not be possible.
+                Please ensure your delivery address is complete and accurate at the time of placing the order. Foodondoor India is not responsible for non-delivery due to incorrect or incomplete address provided by the customer. Address changes after dispatch may not be possible.
               </p>
             </section>
 
@@ -127,8 +127,8 @@ export default function ShippingPolicy() {
                 For shipping-related queries, please contact:<br />
                 <strong>Company:</strong> Foodondoor Private Limited<br />
                 <strong>Address:</strong> Sherpur Square, Indore Bhopal Highway, Sehore, Madhya Pradesh – 466001<br />
-                <strong>Email:</strong> <a href="mailto:wecare@nutriwow.in" className="text-primary underline">wecare@nutriwow.in</a><br />
-                <strong>WhatsApp:</strong> +91 95463 34633<br />
+                <strong>Email:</strong> <a href="mailto:wecare@foodondoor.com" className="text-primary underline">wecare@foodondoor.com</a><br />
+                <strong>WhatsApp:</strong> +91 92431 77706<br />
                 <strong>Hours:</strong> Monday to Saturday, 9 AM – 6 PM IST
               </p>
             </section>

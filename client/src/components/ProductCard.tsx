@@ -182,7 +182,7 @@ function ProductCard({ product }: ProductCardProps) {
 
       {/* Content */}
       <div className="px-3 pb-3 flex flex-col flex-1">
-        <p className="text-[10px] text-nutrigold font-semibold mb-0.5 uppercase tracking-wide">Nutriwow</p>
+        <p className="text-[10px] text-nutrigold font-semibold mb-0.5 uppercase tracking-wide">Foodondoor</p>
         <Link
           href={href}
           className="relative z-[3] text-xs font-medium text-foreground line-clamp-2 hover:text-primary transition-colors mb-2 leading-relaxed"

@@ -1,5 +1,5 @@
 /*
- * Nutriwow Admin - Orders Page
+ * Foodondoor Admin - Orders Page
  * Shopify-style: tab filters, search, inline status update, order detail slide-over panel
  * + Ship Order via Shiprocket / iThink Logistics
  * Shipment info (AWB, tracking URL, provider) stored in DB via adminOrders.updateShipping
@@ -363,8 +363,8 @@ function printInvoice(order: AdminOrder, store?: InvoiceStoreInfo) {
   const win = window.open("", "_blank", "width=800,height=900");
   if (!win) { toast.error("Please allow popups to print invoice"); return; }
   const date = new Date(order.createdAt);
-  const brandName = store?.name || "Nutriwow";
-  const invoiceEmail = store?.email || "orders@nutriwow.in";
+  const brandName = store?.name || "Foodondoor";
+  const invoiceEmail = store?.email || "orders@foodondoor.com";
   const invoiceTitle = store?.gstin ? "TAX INVOICE" : "INVOICE";
   const html = `
 <!DOCTYPE html>
@@ -402,7 +402,7 @@ function printInvoice(order: AdminOrder, store?: InvoiceStoreInfo) {
       ${store?.legalName ? `<div class="brand-sub" style="margin-top:4px">${store.legalName}</div>` : ""}
       ${store?.address ? `<div class="brand-sub">${store.address}</div>` : ""}
       ${store?.gstin ? `<div class="brand-sub">GSTIN: ${store.gstin}</div>` : ""}
-      <div class="brand-sub" style="margin-top:4px">www.nutriwow.in · ${invoiceEmail}</div>
+      <div class="brand-sub" style="margin-top:4px">www.foodondoor.com · ${invoiceEmail}</div>
     </div>
     <div class="invoice-meta">
       <strong>${invoiceTitle}</strong>
@@ -553,7 +553,7 @@ function OrderDetailPanel({ order, onClose, onStatusChange, onShipOrder }: {
     const billing = parse("billing");
     const general = parse("general");
     return {
-      name: general.storeName || "Nutriwow",
+      name: general.storeName || "Foodondoor",
       legalName: billing.businessName || "",
       gstin: billing.gstin || general.storeGST || "",
       address: billing.billingAddress

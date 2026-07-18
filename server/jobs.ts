@@ -66,22 +66,22 @@ export async function processEmailCampaignBatch(batchSize = 20) {
 
   for (const to of batch) {
     const unsubToken = crypto.createHmac("sha256", cookieSecret).update(to.toLowerCase()).digest("hex").slice(0, 16);
-    const unsubUrl = `https://www.nutriwow.in/api/unsubscribe?email=${encodeURIComponent(to)}&token=${unsubToken}`;
+    const unsubUrl = `https://www.foodondoor.com/api/unsubscribe?email=${encodeURIComponent(to)}&token=${unsubToken}`;
     const logId = await createEmailLog(camp.id, to);
 
     let trackedHtml = camp.html;
     if (logId) {
-      const pixel = `<img src="https://www.nutriwow.in/api/track/open/${logId}" width="1" height="1" style="display:none" alt="" />`;
+      const pixel = `<img src="https://www.foodondoor.com/api/track/open/${logId}" width="1" height="1" style="display:none" alt="" />`;
       trackedHtml = trackedHtml.replace(/<\/body>/i, `${pixel}</body>`);
       if (!trackedHtml.includes(pixel)) trackedHtml += pixel;
       trackedHtml = trackedHtml.replace(/href="(https?:\/\/[^"]+)"/g, (_: string, url: string) => {
         if (url.includes("/api/track/") || url.includes("/api/unsubscribe")) return `href="${url}"`;
-        return `href="https://www.nutriwow.in/api/track/click/${logId}?url=${encodeURIComponent(url)}"`;
+        return `href="https://www.foodondoor.com/api/track/click/${logId}?url=${encodeURIComponent(url)}"`;
       });
     }
     trackedHtml = trackedHtml.replace(/<\/body>/i,
       `<div style="text-align:center;padding:20px 0;font-size:12px;color:#999;">` +
-      `You're receiving this because you're a Nutriwow customer. ` +
+      `You're receiving this because you're a Foodondoor customer. ` +
       `<a href="${unsubUrl}" style="color:#999;text-decoration:underline;">Unsubscribe</a></div></body>`
     );
 

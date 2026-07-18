@@ -1,5 +1,5 @@
 /*
- * Nutriwow - Home Page
+ * Foodondoor - Home Page
  * Design: Soft Clay 3D (claymorphism)
  * Colors: Cream background (#FDF2E7), Peach primary (#FF8A4C), Warm brown text (#6B3E15), pastel clay tints
  * Typography: Baloo 2 (headings) + Poppins (body)
@@ -30,21 +30,21 @@ const HOME_JSON_LD = [
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Nutriwow",
-    url: "https://www.nutriwow.in",
-    logo: "https://www.nutriwow.in/nutriwow-logo.png",
+    name: "Foodondoor",
+    url: "https://www.foodondoor.com",
+    logo: "https://www.foodondoor.com/nutriwow-logo.png",
     description: "Buy premium dry fruits, nuts, seeds & healthy snacks online. 100% natural, no preservatives. Free shipping above ₹499 across India.",
-    contactPoint: { "@type": "ContactPoint", contactType: "customer service", email: "wecare@nutriwow.in", telephone: "+91-95463-34633", availableLanguage: ["English", "Hindi"] },
-    sameAs: ["https://www.instagram.com/nutriwowindia/", "https://www.facebook.com/nutriwowindia/"]
+    contactPoint: { "@type": "ContactPoint", contactType: "customer service", email: "wecare@foodondoor.com", telephone: "+91-95463-34633", availableLanguage: ["English", "Hindi"] },
+    sameAs: ["https://www.instagram.com/foodondoor/", "https://www.facebook.com/foodondoor.in/"]
   },
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Nutriwow",
-    url: "https://www.nutriwow.in",
+    name: "Foodondoor",
+    url: "https://www.foodondoor.com",
     potentialAction: {
       "@type": "SearchAction",
-      target: { "@type": "EntryPoint", urlTemplate: "https://www.nutriwow.in/search?q={search_term_string}" },
+      target: { "@type": "EntryPoint", urlTemplate: "https://www.foodondoor.com/search?q={search_term_string}" },
       "query-input": "required name=search_term_string"
     }
   }
@@ -98,10 +98,10 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title="Buy Dry Fruits & Nuts Online | Nutriwow"
+        title="Buy Dry Fruits & Nuts Online | Foodondoor"
         description="Buy premium dry fruits, nuts, seeds & healthy snacks online. 100% natural, no preservatives. Free shipping above ₹499 across India. Shop cashews, almonds, dates & more."
         url="/"
-        keywords="dry fruits online, buy nuts online India, premium almonds, cashews, dates, makhana, healthy snacks, Nutriwow"
+        keywords="dry fruits online, buy nuts online India, premium almonds, cashews, dates, makhana, healthy snacks, Foodondoor"
         jsonLd={HOME_JSON_LD}
       />
       <AnnouncementBar />

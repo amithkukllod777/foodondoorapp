@@ -111,17 +111,17 @@ function emailWrapper(content: string): string {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nutriwow</title>
+  <title>Foodondoor</title>
 </head>
 <body style="${baseStyle}">
   <div style="${containerStyle}">
     <div style="${headerStyle}">
       <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663511606631/CdmiS9X3tpMWG6J8LrtNoP/nutriwow-logo-white_b0839a83.png"
-           alt="Nutriwow" height="180" width="auto"
+           alt="Foodondoor" height="180" width="auto"
            style="display:block;margin:0 auto 4px;max-width:320px;"
            onerror="this.style.display='none'" />
       <h1 style="color:#fff;margin:8px 0 0;font-size:22px;font-weight:700;letter-spacing:0.5px;">
-        Nutriwow
+        Foodondoor
       </h1>
       <p style="color:rgba(255,255,255,0.85);margin:4px 0 0;font-size:13px;">
         Premium Dry Fruits &amp; Healthy Snacks
@@ -130,12 +130,12 @@ function emailWrapper(content: string): string {
     ${content}
     <div style="${footerStyle}">
       <p style="margin:0 0 4px;">
-        &copy; ${new Date().getFullYear()} Nutriwow | 
-        <a href="https://www.nutriwow.in" style="color:#43a047;text-decoration:none;">www.nutriwow.in</a>
+        &copy; ${new Date().getFullYear()} Foodondoor | 
+        <a href="https://www.foodondoor.com" style="color:#43a047;text-decoration:none;">www.foodondoor.com</a>
       </p>
       <p style="margin:0;">
         Questions? Email us at 
-        <a href="mailto:wecare@nutriwow.in" style="color:#43a047;text-decoration:none;">wecare@nutriwow.in</a>
+        <a href="mailto:wecare@foodondoor.com" style="color:#43a047;text-decoration:none;">wecare@foodondoor.com</a>
       </p>
     </div>
   </div>
@@ -223,7 +223,7 @@ function orderConfirmationHtml(data: OrderEmailData): string {
       </div>
 
       <div style="margin-top:24px;text-align:center;">
-        <a href="https://www.nutriwow.in/track-order?orderId=${encodeURIComponent(data.orderId)}"
+        <a href="https://www.foodondoor.com/track-order?orderId=${encodeURIComponent(data.orderId)}"
            style="display:inline-block;background:#43a047;color:#fff;text-decoration:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:700;">
           Track Your Order →
         </a>
@@ -266,7 +266,7 @@ function shippingUpdateHtml(data: ShippingEmailData): string {
       </div>
 
       <div style="text-align:center;">
-        <a href="${data.trackingUrl || `https://www.nutriwow.in/track-order?orderId=${encodeURIComponent(data.orderId)}`}"
+        <a href="${data.trackingUrl || `https://www.foodondoor.com/track-order?orderId=${encodeURIComponent(data.orderId)}`}"
            style="display:inline-block;background:#1565c0;color:#fff;text-decoration:none;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:700;">
           Track Shipment →
         </a>
@@ -274,7 +274,7 @@ function shippingUpdateHtml(data: ShippingEmailData): string {
 
       <p style="margin-top:20px;font-size:13px;color:#888;text-align:center;">
         You can also track your order at 
-        <a href="https://www.nutriwow.in/track-order?orderId=${encodeURIComponent(data.orderId)}" style="color:#43a047;">www.nutriwow.in/track-order</a>
+        <a href="https://www.foodondoor.com/track-order?orderId=${encodeURIComponent(data.orderId)}" style="color:#43a047;">www.foodondoor.com/track-order</a>
       </p>
     </div>`;
 
@@ -287,7 +287,7 @@ function otpHtml(data: OtpEmailData): string {
   const content = `
     <div style="padding:28px 32px;text-align:center;">
       <p style="font-size:16px;color:#333;margin:0 0 8px;">
-        Your verification code for Nutriwow
+        Your verification code for Foodondoor
       </p>
       <p style="font-size:13px;color:#888;margin:0 0 28px;">
         ${data.purpose === "login" ? "Use this OTP to login to your account." : "Use this OTP to verify your account."}
@@ -328,7 +328,7 @@ async function sendTransactionalEmail(
         method: "POST",
         headers: { Authorization: `Bearer ${apiKey}`, "content-type": "application/json" },
         body: JSON.stringify({
-          from: from || `Nutriwow <onboarding@resend.dev>`,
+          from: from || `Foodondoor <onboarding@resend.dev>`,
           to,
           subject,
           html,
@@ -356,7 +356,7 @@ async function sendTransactionalEmail(
   try {
     const transporter = createTransporter();
     const info = await transporter.sendMail({
-      from: `"Nutriwow" <${env.SMTP_USER}>`,
+      from: `"Foodondoor" <${env.SMTP_USER}>`,
       to,
       subject,
       html,
@@ -381,7 +381,7 @@ export async function sendOrderConfirmationEmail(
   if (!(await isNotificationEnabled("newOrder"))) return false;
   return sendTransactionalEmail(
     data.customerEmail,
-    `Order Confirmed ✅ #${data.orderId} — Nutriwow`,
+    `Order Confirmed ✅ #${data.orderId} — Foodondoor`,
     orderConfirmationHtml(data),
     `order-${data.orderId}`,
     invoicePdf ? [{ filename: `Invoice-${data.orderId}.pdf`, content: invoicePdf }] : undefined,
@@ -392,7 +392,7 @@ export async function sendShippingUpdateEmail(data: ShippingEmailData): Promise<
   if (!(await isNotificationEnabled("orderShipped"))) return false;
   return sendTransactionalEmail(
     data.customerEmail,
-    `Your Order #${data.orderId} is Shipped 🚚 — Nutriwow`,
+    `Your Order #${data.orderId} is Shipped 🚚 — Foodondoor`,
     shippingUpdateHtml(data),
     `shipping-${data.orderId}`,
   );
@@ -417,11 +417,11 @@ export async function sendOrderCancelledEmail(
         A <b>credit note</b> for this cancellation is attached.
         ${prepaid ? "Your refund (if paid online) will be processed to the original payment method within 5-7 business days." : ""}
       </p>
-      <p style="margin:14px 0 0;font-size:13px;color:#1b5e20;font-weight:600;">Team Nutriwow</p>
+      <p style="margin:14px 0 0;font-size:13px;color:#1b5e20;font-weight:600;">Team Foodondoor</p>
     </div>`;
   return sendTransactionalEmail(
     data.customerEmail,
-    `Order #${data.orderId} Cancelled — Nutriwow`,
+    `Order #${data.orderId} Cancelled — Foodondoor`,
     emailWrapper(content),
     `cancel-${data.orderId}`,
     creditNotePdf ? [{ filename: `CreditNote-${data.orderId}.pdf`, content: creditNotePdf }] : undefined,
@@ -444,11 +444,11 @@ export async function sendRefundEmail(
       <p style="margin:16px 0 0;font-size:13px;color:#555;">
         The amount will reflect in your original payment method within 5-7 business days. A credit note is attached for your records.
       </p>
-      <p style="margin:14px 0 0;font-size:13px;color:#1b5e20;font-weight:600;">Team Nutriwow</p>
+      <p style="margin:14px 0 0;font-size:13px;color:#1b5e20;font-weight:600;">Team Foodondoor</p>
     </div>`;
   return sendTransactionalEmail(
     data.customerEmail,
-    `Refund of ₹${data.refundAmount} for Order #${data.orderId} — Nutriwow`,
+    `Refund of ₹${data.refundAmount} for Order #${data.orderId} — Foodondoor`,
     emailWrapper(content),
     `refund-${data.orderId}`,
     creditNotePdf ? [{ filename: `CreditNote-${data.orderId}.pdf`, content: creditNotePdf }] : undefined,
@@ -458,7 +458,7 @@ export async function sendRefundEmail(
 export async function sendOtpEmail(data: OtpEmailData): Promise<boolean> {
   return sendTransactionalEmail(
     data.customerEmail,
-    `${data.otp} is your Nutriwow OTP`,
+    `${data.otp} is your Foodondoor OTP`,
     otpHtml(data),
     "otp",
   );
@@ -473,7 +473,7 @@ function welcomeEmailHtml(name?: string): string {
     <div style="background:linear-gradient(135deg,#e8f5e9 0%,#c8e6c9 100%);padding:32px 28px;text-align:center;">
       <div style="font-size:48px;margin-bottom:8px;">🎉</div>
       <h2 style="margin:0 0 6px;font-size:24px;font-weight:800;color:#1b5e20;letter-spacing:-0.5px;">
-        Welcome to the Nutriwow Family!
+        Welcome to the Foodondoor Family!
       </h2>
       <p style="margin:0;font-size:15px;color:#2e7d32;font-weight:500;">
         ${greeting} You're now part of India's premium dry fruits community.
@@ -556,7 +556,7 @@ function welcomeEmailHtml(name?: string): string {
 
       <!-- CTA Button -->
       <div style="text-align:center;margin:28px 0;">
-        <a href="https://www.nutriwow.in" style="display:inline-block;background:linear-gradient(135deg,#2e7d32,#43a047);color:#fff;text-decoration:none;padding:16px 40px;border-radius:50px;font-size:15px;font-weight:700;letter-spacing:0.5px;box-shadow:0 4px 12px rgba(46,125,50,0.3);">
+        <a href="https://www.foodondoor.com" style="display:inline-block;background:linear-gradient(135deg,#2e7d32,#43a047);color:#fff;text-decoration:none;padding:16px 40px;border-radius:50px;font-size:15px;font-weight:700;letter-spacing:0.5px;box-shadow:0 4px 12px rgba(46,125,50,0.3);">
           🛒 Start Shopping Now
         </a>
       </div>
@@ -565,11 +565,11 @@ function welcomeEmailHtml(name?: string): string {
       <div style="border-top:1px solid #eee;padding-top:20px;text-align:center;">
         <p style="margin:0 0 8px;font-size:13px;color:#888;">Follow us for daily health tips & offers</p>
         <p style="margin:0 0 12px;">
-          <a href="https://www.instagram.com/nutriwow.in/" style="color:#e91e63;text-decoration:none;font-size:13px;font-weight:600;margin:0 8px;">Instagram</a>
+          <a href="https://www.instagram.com/foodondoor.com/" style="color:#e91e63;text-decoration:none;font-size:13px;font-weight:600;margin:0 8px;">Instagram</a>
           <span style="color:#ddd;">|</span>
           <a href="https://wa.me/919993883710" style="color:#25d366;text-decoration:none;font-size:13px;font-weight:600;margin:0 8px;">WhatsApp</a>
           <span style="color:#ddd;">|</span>
-          <a href="https://www.nutriwow.in" style="color:#2e7d32;text-decoration:none;font-size:13px;font-weight:600;margin:0 8px;">Website</a>
+          <a href="https://www.foodondoor.com" style="color:#2e7d32;text-decoration:none;font-size:13px;font-weight:600;margin:0 8px;">Website</a>
         </p>
         <div style="background:#e8f5e9;border-radius:8px;padding:12px 16px;">
           <p style="margin:0;font-size:12px;color:#2e7d32;">
@@ -584,7 +584,7 @@ function welcomeEmailHtml(name?: string): string {
 export async function sendWelcomeEmail(email: string, name?: string): Promise<boolean> {
   return sendTransactionalEmail(
     email,
-    "🎉 Welcome to the Nutriwow Family! Here's Your Welcome Kit",
+    "🎉 Welcome to the Foodondoor Family! Here's Your Welcome Kit",
     welcomeEmailHtml(name),
     "welcome",
   );
@@ -605,7 +605,7 @@ export interface CampaignSendOptions {
   /** Resend API key (admin-entered, takes priority over env). If present, Resend
    *  is used instead of SMTP. */
   resendApiKey?: string;
-  /** Resend "from" — must be on a Resend-verified domain, e.g. "Nutriwow <noreply@nutriwow.in>". */
+  /** Resend "from" — must be on a Resend-verified domain, e.g. "Foodondoor <noreply@foodondoor.com>". */
   resendFrom?: string;
 }
 
@@ -649,13 +649,13 @@ export async function sendCampaignEmail(
   html: string,
   opts: CampaignSendOptions = {}
 ): Promise<CampaignSendResult> {
-  const fromName = opts.fromName || "Nutriwow";
+  const fromName = opts.fromName || "Foodondoor";
   const resendKey = opts.resendApiKey || env.resendApiKey;
 
   if (resendKey) {
     // Resend requires a verified-domain sender. Default to Resend's onboarding
     // sender (only delivers to the account owner) until a domain is verified.
-    const from = (opts.resendFrom || env.resendFrom || `Nutriwow <onboarding@resend.dev>`).trim();
+    const from = (opts.resendFrom || env.resendFrom || `Foodondoor <onboarding@resend.dev>`).trim();
     return sendViaResend(resendKey, from, to, subject, html);
   }
 

@@ -396,7 +396,7 @@ export async function finalizePendingOrder(order: any, paymentId?: string): Prom
         zipCode: order.pincode || undefined,
         country: "in",
       },
-      sourceUrl: "https://www.nutriwow.in/payment-status",
+      sourceUrl: "https://www.foodondoor.com/payment-status",
     }),
   ]);
   });
@@ -438,7 +438,7 @@ async function sendWhatsAppOrderNotification(mobile: string, orderId: string, to
   try {
     const deliveryDays = paymentMethod === 'COD' ? '5-7' : '3-5';
     const greeting = customerName ? 'Hi ' + customerName + '!' : 'Hi!';
-    const message = greeting + ' Your Nutriwow order #' + orderId + ' has been placed! Total: Rs.' + total + '. Payment: ' + paymentMethod + '. Delivery in ' + deliveryDays + ' business days. Track: www.nutriwow.in/track-order. Thank you!';
+    const message = greeting + ' Your Foodondoor order #' + orderId + ' has been placed! Total: Rs.' + total + '. Payment: ' + paymentMethod + '. Delivery in ' + deliveryDays + ' business days. Track: www.foodondoor.com/track-order. Thank you!';
     const payload = {
       data: {
         access_token: accessToken,
@@ -466,7 +466,7 @@ async function sendOrderConfirmationSMS(mobile: string, orderId: string, total: 
   if (!(await isNotificationEnabled("newOrder"))) return;
   try {
     const deliveryDays = paymentMethod === "COD" ? "5-7" : "3-5";
-    const message = `Dear Customer, your Nutriwow order #${orderId} placed! Total: Rs.${total}. Delivery in ${deliveryDays} business days. Track: www.nutriwow.in/track-order. Thank you!`;
+    const message = `Dear Customer, your Foodondoor order #${orderId} placed! Total: Rs.${total}. Delivery in ${deliveryDays} business days. Track: www.foodondoor.com/track-order. Thank you!`;
     await fetch("https://www.fast2sms.com/dev/bulkV2", {
       method: "POST",
       headers: { authorization: apiKey, "Content-Type": "application/json", "cache-control": "no-cache" },
@@ -553,12 +553,12 @@ async function notifyBackInStock(productId: number): Promise<void> {
       getStockAlertsForProduct(productId),
     ]);
     if (!product || alerts.length === 0) return;
-    const url = `https://nutriwow.in/products/${product.handle}`;
+    const url = `https://foodondoor.com/products/${product.handle}`;
     const rc = await getResendConfig();
     const html =
       `<div style="font-family:Arial,Helvetica,sans-serif;max-width:560px;margin:0 auto;padding:24px">` +
       `<h2 style="color:#43A047;margin:0 0 8px">Good news — it's back! 🎉</h2>` +
-      `<p style="font-size:15px;color:#333"><strong>${product.name}</strong> is back in stock at Nutriwow.</p>` +
+      `<p style="font-size:15px;color:#333"><strong>${product.name}</strong> is back in stock at Foodondoor.</p>` +
       `<p style="margin:20px 0"><a href="${url}" style="display:inline-block;background:#43A047;color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:bold">Order Now</a></p>` +
       `<p style="color:#999;font-size:12px">You asked to be notified when this product is available again.</p></div>`;
     for (const a of alerts) {
@@ -571,7 +571,7 @@ async function notifyBackInStock(productId: number): Promise<void> {
       if (a.phone) {
         await sendTextMessage(
           a.phone,
-          `Good news${a.name ? ` ${a.name}` : ""}! ${product.name} is back in stock at Nutriwow. Order now: ${url}`
+          `Good news${a.name ? ` ${a.name}` : ""}! ${product.name} is back in stock at Foodondoor. Order now: ${url}`
         ).catch(() => {});
       }
       await new Promise((r) => setTimeout(r, 150));
@@ -584,7 +584,7 @@ async function notifyBackInStock(productId: number): Promise<void> {
 }
 
 const ADMIN_NOTIFY_EMAIL = "orders@foodondoor.com";
-const ADMIN_NOTIFY_PHONE = "9546334633";
+const ADMIN_NOTIFY_PHONE = "9243177706";
 
 async function notifyAdminNewOrder(order: {
   id: string;
@@ -606,7 +606,7 @@ async function notifyAdminNewOrder(order: {
     `Payment: ${order.paymentMethod}\n` +
     `Total: ${totalFormatted}\n\n` +
     `${itemLines}\n\n` +
-    `View: https://www.nutriwow.in/admin/orders`;
+    `View: https://www.foodondoor.com/admin/orders`;
   sendTextMessage(ADMIN_NOTIFY_PHONE, waMsg).catch((e) =>
     console.error("[AdminNotify] WhatsApp failed:", e)
   );
@@ -627,7 +627,7 @@ async function notifyAdminNewOrder(order: {
       <ul style="margin:0;padding:0 0 0 20px;font-size:13px">
         ${order.items.map(i => `<li>${esc(i.name)} x${i.quantity} — ₹${(i.price * i.quantity).toLocaleString("en-IN")}</li>`).join("")}
       </ul>
-      <p style="margin:20px 0 0"><a href="https://www.nutriwow.in/admin/orders" style="display:inline-block;background:#43A047;color:#fff;padding:10px 24px;border-radius:8px;text-decoration:none;font-weight:bold">View in Admin</a></p>
+      <p style="margin:20px 0 0"><a href="https://www.foodondoor.com/admin/orders" style="display:inline-block;background:#43A047;color:#fff;padding:10px 24px;border-radius:8px;text-decoration:none;font-weight:bold">View in Admin</a></p>
     </div>`;
   sendCampaignEmail(ADMIN_NOTIFY_EMAIL, `New Order ${order.id} — ${totalFormatted} (${order.paymentMethod})`, html, {
     resendApiKey: rc.apiKey || undefined,
@@ -689,7 +689,7 @@ async function buildGSTInvoiceData(order: any) {
   const brandAssets = parse("brandAssets"); // admin-uploaded logo/stamp URLs
 
   const gstin = billing.gstin || general.storeGST || "23AAECF1312M1ZZ";
-  const sellerEmail = general.storeEmail || billing.billingEmail || "orders@nutriwow.in";
+  const sellerEmail = general.storeEmail || billing.billingEmail || "orders@foodondoor.com";
   const sellerAddress = billing.billingAddress
     || [general.storeAddress, general.storeCity, general.storeState, general.storePincode].filter(Boolean).join(", ")
     || "Sehore, Madhya Pradesh";
@@ -767,7 +767,7 @@ async function buildGSTInvoiceData(order: any) {
     orderDate: orderDate.toLocaleDateString("en-IN", { day: "2-digit", month: "long", year: "numeric" }),
 
     seller: {
-      name: general.storeName || "Nutriwow",
+      name: general.storeName || "Foodondoor",
       legalName: billing.businessName || "Foodondoor Private Limited",
       gstin,
       address: sellerAddress,
@@ -1451,7 +1451,7 @@ export const appRouter = router({
               zipCode: input.pincode,
               country: "in",
             },
-            sourceUrl: "https://www.nutriwow.in/payment-status",
+            sourceUrl: "https://www.foodondoor.com/payment-status",
           }),
         ]);
         });
@@ -1565,7 +1565,7 @@ export const appRouter = router({
                 `A credit note has been generated${target.email ? " and emailed to you" : ""}.`,
                 /cod/i.test(target.paymentMethod || "") ? `` : `Any online payment will be refunded to your original method in 5-7 business days.`,
                 ``,
-                `— Team Nutriwow`,
+                `— Team Foodondoor`,
               ].filter(Boolean).join("\n")).catch(() => {}) : Promise.resolve(),
               (phone && creditNote?.url)
                 ? sendDocumentMessage(phone, creditNote.url, `CreditNote-${target.id}.pdf`, `🧾 Credit note for cancelled order #${target.id}`).catch(() => {})
@@ -1743,7 +1743,7 @@ export const appRouter = router({
               ``,
               `It will reflect in your original payment method within 5-7 business days.`,
               ``,
-              `— Team Nutriwow`,
+              `— Team Foodondoor`,
             ].join("\n")).catch(() => {}) : Promise.resolve(),
             (phone && creditNote?.url)
               ? sendDocumentMessage(phone, creditNote.url, `CreditNote-${order.id}.pdf`, `🧾 Credit note for order #${order.id}`).catch(() => {})
@@ -2055,7 +2055,7 @@ export const appRouter = router({
         sendTextMessage(input.phone, [
           `${greeting}`,
           ``,
-          `🎉 *Welcome to the Nutriwow Family!*`,
+          `🎉 *Welcome to the Foodondoor Family!*`,
           ``,
           `You're now subscribed to receive:`,
           `✅ Exclusive discounts & offers`,
@@ -2065,10 +2065,10 @@ export const appRouter = router({
           ``,
           `🎁 *Your Welcome Offer:* Use code *WELCOME10* for 10% off your first order!`,
           ``,
-          `🛒 Shop now: www.nutriwow.in`,
+          `🛒 Shop now: www.foodondoor.com`,
           ``,
           `Thank you for joining us! 🥜🌰`,
-          `— Team Nutriwow`,
+          `— Team Foodondoor`,
         ].join("\n")).catch(() => {});
         return sub;
       }),
@@ -2307,7 +2307,7 @@ export const appRouter = router({
             messages: [
               {
                 role: "system",
-                content: `You are an expert SEO content writer for Nutriwow, a premium Indian healthy snacks brand. Your job is to write a focused, detailed blog article STRICTLY about the topic given by the user — do NOT switch to a different topic, do NOT write about unrelated products. Use HTML format with <h2>, <h3>, <p>, <ul>, <li>, <strong> tags. Write for an Indian audience. Keep the entire article tightly focused on the exact title provided.`,
+                content: `You are an expert SEO content writer for Foodondoor, a premium Indian healthy snacks brand. Your job is to write a focused, detailed blog article STRICTLY about the topic given by the user — do NOT switch to a different topic, do NOT write about unrelated products. Use HTML format with <h2>, <h3>, <p>, <ul>, <li>, <strong> tags. Write for an Indian audience. Keep the entire article tightly focused on the exact title provided.`,
               },
               {
                 role: "user",
@@ -2329,7 +2329,7 @@ export const appRouter = router({
             messages: [
               {
                 role: "system",
-                content: "You are an SEO content strategist for Nutriwow, an Indian premium dry fruits and healthy snacks brand. Suggest blog topic ideas that will rank well on Google India.",
+                content: "You are an SEO content strategist for Foodondoor, an Indian premium dry fruits and healthy snacks brand. Suggest blog topic ideas that will rank well on Google India.",
               },
               {
                 role: "user",
@@ -2780,12 +2780,12 @@ export const appRouter = router({
         if (!cart) throw new Error("Cart not found.");
         const items = ((cart.items as Array<{ name?: string }>) || []).map((i) => i?.name).filter(Boolean) as string[];
         const itemsText = items.slice(0, 3).join(", ") + (items.length > 3 ? `, +${items.length - 3} more` : "");
-        const url = "https://nutriwow.in";
+        const url = "https://foodondoor.com";
         let whatsapp = false, email = false;
         if (cart.phone) {
           const r = await sendTextMessage(
             cart.phone,
-            `Hi${cart.name ? ` ${cart.name}` : ""}! You left ${itemsText || "items"} in your Nutriwow cart 🛒. Complete your order before it's gone: ${url}`
+            `Hi${cart.name ? ` ${cart.name}` : ""}! You left ${itemsText || "items"} in your Foodondoor cart 🛒. Complete your order before it's gone: ${url}`
           ).catch(() => ({ success: false }));
           whatsapp = !!(r as { success?: boolean }).success;
         }
@@ -2797,7 +2797,7 @@ export const appRouter = router({
             `<p style="font-size:15px;color:#333">Hi${cart.name ? ` ${cart.name}` : ""}, you left <strong>${itemsText || "items"}</strong> in your cart (₹${cart.total}).</p>` +
             `<p style="margin:20px 0"><a href="${url}" style="display:inline-block;background:#43A047;color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:bold">Complete your order</a></p>` +
             `<p style="color:#999;font-size:12px">Fresh dry fruits, delivered across India.</p></div>`;
-          const r = await sendCampaignEmail(cart.email, "You left items in your cart 🛒 — Nutriwow", html, {
+          const r = await sendCampaignEmail(cart.email, "You left items in your cart 🛒 — Foodondoor", html, {
             resendApiKey: rc.apiKey || undefined,
             resendFrom: rc.from || undefined,
           });
@@ -2963,7 +2963,7 @@ export const appRouter = router({
         const deliveredToday = deliveredResult?.count || 0;
         
         // Get messaging limit from Meta API. Fall back to the current approved
-        // Nutriwow limit so the admin UI stays correct if Meta is temporarily slow.
+        // Foodondoor limit so the admin UI stays correct if Meta is temporarily slow.
         let dailyLimit = 10000;
         let tier = 'TIER_10K';
         try {
@@ -3277,7 +3277,7 @@ export const appRouter = router({
           return {
             title: String(title).slice(0, 1000),
             buttonText: urlBtn?.text || "Shop now",
-            buttonUrl: (urlBtn?.url || "https://www.nutriwow.in").replace(/\{\{\d+\}\}/g, ""),
+            buttonUrl: (urlBtn?.url || "https://www.foodondoor.com").replace(/\{\{\d+\}\}/g, ""),
           };
         };
 
@@ -4049,7 +4049,7 @@ export const appRouter = router({
 
   feed: router({
     refresh: adminProcedure.mutation(async () => {
-      const BASE = "https://www.nutriwow.in";
+      const BASE = "https://www.foodondoor.com";
       const products = await getAllProducts();
       if (!products || products.length === 0) {
         throw new Error("No products found");
@@ -4069,16 +4069,16 @@ export const appRouter = router({
         escCsv(p.price + ' INR'),
         escCsv(BASE + '/products/' + p.handle),
         escCsv(p.image),
-        escCsv('Nutriwow'),
+        escCsv('Foodondoor'),
         escCsv(p.category),
       ].join(','));
       const csvContent = [header, ...rows].join('\n');
 
       // Generate Facebook XML
-      const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>\n<feed>\n${products.map(p => `  <entry>\n    <id>${p.id}</id>\n    <title>${esc(p.name)}</title>\n    <description>${esc((p.description || p.name).substring(0, 5000))}</description>\n    <availability>${p.available !== false ? 'in stock' : 'out of stock'}</availability>\n    <condition>new</condition>\n    <price>${p.price}.00 INR</price>\n    <link>${BASE}/products/${p.handle}</link>\n    <image_link>${p.image}</image_link>\n    <brand>Nutriwow</brand>\n    <product_type>${esc(p.category)}</product_type>\n  </entry>`).join('\n')}\n</feed>`;
+      const xmlContent = `<?xml version="1.0" encoding="UTF-8"?>\n<feed>\n${products.map(p => `  <entry>\n    <id>${p.id}</id>\n    <title>${esc(p.name)}</title>\n    <description>${esc((p.description || p.name).substring(0, 5000))}</description>\n    <availability>${p.available !== false ? 'in stock' : 'out of stock'}</availability>\n    <condition>new</condition>\n    <price>${p.price}.00 INR</price>\n    <link>${BASE}/products/${p.handle}</link>\n    <image_link>${p.image}</image_link>\n    <brand>Foodondoor</brand>\n    <product_type>${esc(p.category)}</product_type>\n  </entry>`).join('\n')}\n</feed>`;
 
       // Generate Google Shopping XML
-      const googleXml = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">\n  <channel>\n    <title>Nutriwow India - Premium Dry Fruits &amp; Nuts</title>\n    <link>${BASE}</link>\n    <description>Premium quality dry fruits, nuts, seeds and healthy snacks</description>\n${products.map(p => `    <item>\n      <g:id>${p.id}</g:id>\n      <g:title>${esc(p.name)}</g:title>\n      <g:description>${esc((p.description || p.name).substring(0, 5000))}</g:description>\n      <g:link>${BASE}/products/${p.handle}</g:link>\n      <g:image_link>${p.image}</g:image_link>\n      <g:price>${p.price}.00 INR</g:price>\n      <g:availability>${p.available !== false ? 'in stock' : 'out of stock'}</g:availability>\n      <g:brand>Nutriwow</g:brand>\n      <g:condition>new</g:condition>\n      <g:product_type>${esc(p.category)}</g:product_type>\n      <g:identifier_exists>no</g:identifier_exists>\n      <g:shipping>\n        <g:country>IN</g:country>\n        <g:price>0 INR</g:price>\n      </g:shipping>\n    </item>`).join('\n')}\n  </channel>\n</rss>`;
+      const googleXml = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">\n  <channel>\n    <title>Foodondoor India - Premium Dry Fruits &amp; Nuts</title>\n    <link>${BASE}</link>\n    <description>Premium quality dry fruits, nuts, seeds and healthy snacks</description>\n${products.map(p => `    <item>\n      <g:id>${p.id}</g:id>\n      <g:title>${esc(p.name)}</g:title>\n      <g:description>${esc((p.description || p.name).substring(0, 5000))}</g:description>\n      <g:link>${BASE}/products/${p.handle}</g:link>\n      <g:image_link>${p.image}</g:image_link>\n      <g:price>${p.price}.00 INR</g:price>\n      <g:availability>${p.available !== false ? 'in stock' : 'out of stock'}</g:availability>\n      <g:brand>Foodondoor</g:brand>\n      <g:condition>new</g:condition>\n      <g:product_type>${esc(p.category)}</g:product_type>\n      <g:identifier_exists>no</g:identifier_exists>\n      <g:shipping>\n        <g:country>IN</g:country>\n        <g:price>0 INR</g:price>\n      </g:shipping>\n    </item>`).join('\n')}\n  </channel>\n</rss>`;
 
       // Upload all to S3
       const timestamp = Date.now();
@@ -4236,8 +4236,8 @@ export const appRouter = router({
         const g = (general || {}) as { storeName?: string };
         return generateEmailCampaign({
           brief: input.brief,
-          storeName: g.storeName || "Nutriwow",
-          storeUrl: "https://nutriwow.in",
+          storeName: g.storeName || "Foodondoor",
+          storeUrl: "https://foodondoor.com",
           products: input.products,
         }, storedKey || undefined);
       }),
@@ -4370,7 +4370,7 @@ export const appRouter = router({
       const code = await getReferralCode(ctx.customer.customerId);
       return {
         code,
-        shareLink: `https://www.nutriwow.in?ref=${code}`,
+        shareLink: `https://www.foodondoor.com?ref=${code}`,
       };
     }),
 

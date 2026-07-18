@@ -1,5 +1,5 @@
 /*
- * Nutriwow Admin - Dashboard
+ * Foodondoor Admin - Dashboard
  * DB-backed: uses trpc.dashboard.stats and trpc.adminOrders.getAll
  */
 import { useMemo } from "react";

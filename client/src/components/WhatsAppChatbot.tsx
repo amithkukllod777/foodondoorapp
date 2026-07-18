@@ -107,7 +107,7 @@ export default function WhatsAppChatbot() {
               🌿
             </div>
             <div className="flex-1">
-              <p className="text-white font-semibold text-sm leading-tight">Nutriwow Support</p>
+              <p className="text-white font-semibold text-sm leading-tight">Foodondoor Support</p>
               <div className="flex items-center gap-1.5 mt-0.5">
                 <span className="w-2 h-2 rounded-full bg-green-300 animate-pulse" />
                 <p className="text-green-100 text-xs">Online • Typically replies in minutes</p>
@@ -129,7 +129,7 @@ export default function WhatsAppChatbot() {
             >
               <p className="font-medium text-foreground mb-1">👋 Namaste!</p>
               <p className="text-muted-foreground text-xs leading-relaxed">
-                Nutriwow mein aapka swagat hai! Hum kaise madad kar sakte hain?
+                Foodondoor mein aapka swagat hai! Hum kaise madad kar sakte hain?
               </p>
             </div>
           </div>

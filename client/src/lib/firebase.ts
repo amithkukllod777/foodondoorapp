@@ -1,6 +1,8 @@
 import { getApps, initializeApp } from "firebase/app";
 import { getAnalytics, isSupported } from "firebase/analytics";
 
+// TODO(foodondoor): This is Nutriwow's Firebase project. Replace with Foodondoor's own
+// Firebase config before launch, otherwise Foodondoor analytics/events flow into Nutriwow's project.
 const firebaseConfig = {
   apiKey: "AIzaSyAdxsgy148NzgZaQGOk4ONha_XOfzZKG0g",
   authDomain: "nutriwow.firebaseapp.com",

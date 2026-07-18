@@ -1,5 +1,5 @@
 /**
- * Nutriwow Admin - Abandoned Carts
+ * Foodondoor Admin - Abandoned Carts
  * DB-backed: uses trpc.abandonedCarts.getAll / markRecovered / delete
  */
 import { useMemo, useState } from "react";

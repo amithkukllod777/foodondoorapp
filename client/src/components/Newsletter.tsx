@@ -116,8 +116,8 @@ export default function Newsletter() {
             <p className="text-foreground font-bold text-lg mb-1">You're all set! 🎉</p>
             <p className="text-muted-foreground text-sm">
               {tab === "whatsapp"
-                ? "Watch for exclusive Nutriwow deals on your WhatsApp."
-                : "Watch your inbox for exclusive Nutriwow deals and offers."}
+                ? "Watch for exclusive Foodondoor deals on your WhatsApp."
+                : "Watch your inbox for exclusive Foodondoor deals and offers."}
             </p>
           </div>
         ) : tab === "whatsapp" ? (

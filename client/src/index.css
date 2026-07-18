@@ -42,7 +42,9 @@
   --color-sidebar-ring: var(--sidebar-ring);
   --font-sans: 'Poppins', sans-serif;
   --font-serif: 'Baloo 2', sans-serif;
-  /* Nutriwow brand colors */
+  /* Foodondoor brand colors — tiranga: royal blue primary, green + saffron accents */
+  --color-foodblue: oklch(0.42 0.19 266);
+  --color-foodblue-dark: oklch(0.30 0.14 266);
   --color-nutrigreen: oklch(0.50 0.17 145);
   --color-nutrigreen-light: oklch(0.95 0.04 145);
   --color-nutriorange: oklch(0.7 0.2 55);
@@ -67,11 +69,11 @@
 
 :root {
   /* Original palette (green primary, off-white bg) with clay 3D treatment */
-  --primary: oklch(0.50 0.17 145);
+  --primary: oklch(0.42 0.19 266);
   --primary-foreground: oklch(1 0 0);
-  --sidebar-primary: oklch(0.50 0.17 145);
+  --sidebar-primary: oklch(0.42 0.19 266);
   --sidebar-primary-foreground: oklch(1 0 0);
-  --chart-1: oklch(0.50 0.17 145);
+  --chart-1: oklch(0.42 0.19 266);
   --chart-2: oklch(0.6 0.15 145);
   --chart-3: oklch(0.65 0.12 145);
   --chart-4: oklch(0.72 0.12 75);
@@ -93,13 +95,13 @@
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.90 0.008 75);
   --input: oklch(0.90 0.008 75);
-  --ring: oklch(0.50 0.17 145);
+  --ring: oklch(0.42 0.19 266);
   --sidebar: oklch(0.98 0.004 75);
   --sidebar-foreground: oklch(0.22 0.015 60);
   --sidebar-accent: oklch(0.96 0.02 145);
   --sidebar-accent-foreground: oklch(0.3 0.1 145);
   --sidebar-border: oklch(0.90 0.008 75);
-  --sidebar-ring: oklch(0.50 0.17 145);
+  --sidebar-ring: oklch(0.42 0.19 266);
 }
 
 @layer base {

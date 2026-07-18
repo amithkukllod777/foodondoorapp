@@ -149,7 +149,7 @@ export default function CategoryPage() {
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
         title={`${displayName} - Buy Premium ${displayName} Online`}
-        description={`Buy premium ${displayName.toLowerCase()} online from Nutriwow. ${categoryProducts.length}+ products available. 100% natural, no preservatives. Free shipping across India.`}
+        description={`Buy premium ${displayName.toLowerCase()} online from Foodondoor. ${categoryProducts.length}+ products available. 100% natural, no preservatives. Free shipping across India.`}
         url={`/collections/${encodeURIComponent(categoryName)}`}
         keywords={`${displayName.toLowerCase()} online India, buy ${displayName.toLowerCase()}, premium ${displayName.toLowerCase()}, nutriwow ${displayName.toLowerCase()}`}
         jsonLd={[
