@@ -1,0 +1,2 @@
+ALTER TABLE `orders` MODIFY COLUMN `paymentMethod` enum('COD','UPI','Card','Advance','PhonePe','Razorpay') NOT NULL;--> statement-breakpoint
+ALTER TABLE `orders` MODIFY COLUMN `paymentPlan` enum('full','advance30','cod','phonepe_full','phonepe_advance30','razorpay_full','razorpay_advance30') NOT NULL DEFAULT 'cod';

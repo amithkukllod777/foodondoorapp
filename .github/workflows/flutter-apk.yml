@@ -1,0 +1,91 @@
+name: Build Flutter APK
+
+on:
+  push:
+    branches: [main]
+    paths: ['flutter_app/**']
+  pull_request:
+    paths: ['flutter_app/**']
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: flutter_app
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: 3.44.4
+          cache: true
+
+      - name: Set up release signing from the ORIGINAL Play Store keystore
+        working-directory: flutter_app/android
+        env:
+          # Same secrets the Capacitor android-build.yml uses — i.e. the original
+          # nutriwow-release.keystore already registered with Play Store. Falls
+          # back to the ANDROID_* names if those are the ones that were set.
+          KEYSTORE_B64: ${{ secrets.KEYSTORE_BASE64 }}
+          KEYSTORE_B64_ALT: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          STORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          STORE_PASSWORD_ALT: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_ALIAS_ALT: ${{ secrets.ANDROID_KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          KEY_PASSWORD_ALT: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          B64="${KEYSTORE_B64:-$KEYSTORE_B64_ALT}"
+          SP="${STORE_PASSWORD:-$STORE_PASSWORD_ALT}"
+          KA="${KEY_ALIAS:-$KEY_ALIAS_ALT}"
+          KP="${KEY_PASSWORD:-$KEY_PASSWORD_ALT}"
+          if [ -z "$B64" ]; then
+            echo "No keystore secret found (KEYSTORE_BASE64 / ANDROID_KEYSTORE_BASE64) — release will be debug-signed."
+            exit 0
+          fi
+          echo "$B64" | base64 -d > upload-keystore.jks
+          {
+            echo "storeFile=upload-keystore.jks"
+            echo "storePassword=$SP"
+            echo "keyAlias=$KA"
+            echo "keyPassword=$KP"
+          } > key.properties
+          echo "=== Signing key fingerprint (must match Play Store's D8:A7:5F:BC...) ==="
+          keytool -list -v -keystore upload-keystore.jks -storepass "$SP" 2>/dev/null | grep -iE "Alias name|SHA1:|SHA-1:" || echo "keytool could not read the keystore (wrong password/alias?)"
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Analyze
+        run: flutter analyze --no-fatal-infos
+
+      - name: Test
+        run: flutter test
+
+      - name: Build release APK
+        run: flutter build apk --release
+
+      - name: Build release App Bundle (.aab for Play Store)
+        run: flutter build appbundle --release
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nutriwow-app-release-apk
+          path: flutter_app/build/app/outputs/flutter-apk/app-release.apk
+          retention-days: 30
+
+      - name: Upload AAB artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nutriwow-app-release-aab
+          path: flutter_app/build/app/outputs/bundle/release/app-release.aab
+          retention-days: 30

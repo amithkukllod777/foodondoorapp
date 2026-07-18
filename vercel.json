@@ -1,0 +1,43 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "pnpm build:vercel",
+  "outputDirectory": "dist/public",
+  "functions": {
+    "api/index.ts": {
+      "includeFiles": "dist/public/**",
+      "maxDuration": 60
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/cron/jobs",
+      "schedule": "0 2 * * *"
+    }
+  ],
+  "images": {
+    "sizes": [64, 96, 128, 200, 256, 384, 640, 750, 828, 1080, 1200, 1600],
+    "formats": ["image/webp"],
+    "minimumCacheTTL": 86400,
+    "remotePatterns": [
+      { "protocol": "https", "hostname": "d2xsxph8kpxj0f.cloudfront.net" },
+      { "protocol": "https", "hostname": "*.cloudfront.net" },
+      { "protocol": "https", "hostname": "files.manuscdn.com" },
+      { "protocol": "https", "hostname": "www.nutriwow.in" },
+      { "protocol": "https", "hostname": "lh3.googleusercontent.com" },
+      { "protocol": "https", "hostname": "images.unsplash.com" },
+      { "protocol": "https", "hostname": "*.public.blob.vercel-storage.com" }
+    ]
+  },
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ],
+  "rewrites": [
+    { "source": "/((?!_vercel/).*)", "destination": "/api" }
+  ]
+}
