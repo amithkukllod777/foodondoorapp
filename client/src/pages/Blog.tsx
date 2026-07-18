@@ -1,5 +1,5 @@
 /**
- * Nutriwow - Blog / Health Articles Page
+ * Foodondoor - Blog / Health Articles Page
  * SEO-focused health content to drive organic traffic
  */
 
@@ -251,7 +251,7 @@ export default function Blog() {
     <div className="min-h-screen flex flex-col bg-background" >
       <SEO
         title="Health Blog | Dry Fruits, Nutrition & Wellness Tips"
-        description="Read expert articles on dry fruits, nuts, seeds, and healthy snacks. Science-backed nutrition tips, recipes, and wellness guides from Nutriwow."
+        description="Read expert articles on dry fruits, nuts, seeds, and healthy snacks. Science-backed nutrition tips, recipes, and wellness guides from Foodondoor."
         url="/blog"
         keywords="dry fruits health benefits, nutrition blog, healthy snacks India, almonds benefits, cashews benefits, makhana benefits"
         type="website"
@@ -268,7 +268,7 @@ export default function Blog() {
               Health & Nutrition
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">
-              Nutriwow Health Blog
+              Foodondoor Health Blog
             </h1>
             <p className="text-muted-foreground text-sm max-w-xl mx-auto">
               Expert-backed articles on nutrition, dry fruits, and healthy living — to help you make the best food choices.

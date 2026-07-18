@@ -80,7 +80,7 @@ export default function HeroCarousel({ slides: propSlides }: { slides?: Slide[] 
     <section className="w-full relative overflow-hidden" aria-label="Hero Banner">
       {/* SEO H1 - visually hidden */}
       <h1 className="sr-only">
-        Nutriwow – Buy Premium Dry Fruits, Nuts, Seeds &amp; Healthy Snacks Online in India
+        Foodondoor – Buy Premium Dry Fruits, Nuts, Seeds &amp; Healthy Snacks Online in India
       </h1>
 
       <div className="relative">
@@ -95,7 +95,7 @@ export default function HeroCarousel({ slides: propSlides }: { slides?: Slide[] 
                   <source media="(min-width: 640px)" srcSet={optImg(s.desktopImage, 1600)} />
                   <img
                     src={optImg(s.mobileImage || s.desktopImage, 828)}
-                    alt={s.alt || "Nutriwow – Premium Dry Fruits & Healthy Snacks"}
+                    alt={s.alt || "Foodondoor – Premium Dry Fruits & Healthy Snacks"}
                     className="w-full h-auto sm:h-full object-cover block"
                     fetchPriority={i === 0 ? "high" : "low"}
                     loading={i === 0 ? "eager" : "lazy"}

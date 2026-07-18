@@ -1,5 +1,5 @@
 /**
- * Nutriwow - Blog Article Detail Page
+ * Foodondoor - Blog Article Detail Page
  * Route: /blog/:slug
  * SEO-focused full article content
  */
@@ -105,9 +105,9 @@ Almonds are rich in folate — critical for fetal neural tube development. They 
 
 **Daily Quantity:** 20-25 almonds (28g) per day is the optimal amount for most adults. More is not always better — almonds are calorie-dense.
 
-## Nutriwow Premium Almonds
+## Foodondoor Premium Almonds
 
-Nutriwow sources California almonds — known for their superior size, crunch, and nutrient density. Our almonds are:
+Foodondoor sources California almonds — known for their superior size, crunch, and nutrient density. Our almonds are:
 - **Non-GMO** and naturally grown
 - **Vacuum-sealed** for maximum freshness
 - **FSSAI certified** for quality assurance
@@ -174,7 +174,7 @@ Each nut has unique benefits — variety is key for optimal heart health.
 
 **Best time to eat:** Morning as a snack, or pre-workout for sustained energy.
 
-## Nutriwow Premium Cashews
+## Foodondoor Premium Cashews
 
 Our cashews are W240 grade — the premium whole cashew grade preferred by chefs and health enthusiasts. Sourced from Goa and Kerala, they're:
 - **Large, whole kernels** with no broken pieces
@@ -254,9 +254,9 @@ Makhana provides calcium and phosphorus in a highly bioavailable form. Regular c
 
 **Makhana Curry:** Used in gravies and curries in North Indian cuisine.
 
-**As a Snack:** Nutriwow's flavored makhana (Tangy Tomato, Peri Peri, Classic Salt) are ready-to-eat and perfect for office snacking.
+**As a Snack:** Foodondoor's flavored makhana (Tangy Tomato, Peri Peri, Classic Salt) are ready-to-eat and perfect for office snacking.
 
-## Nutriwow Makhana Range
+## Foodondoor Makhana Range
 
 Our makhana is sourced directly from Bihar — India's makhana heartland — where the best quality lotus seeds are grown in clean, natural ponds. We offer:
 - **Classic Roasted Makhana** — simple, wholesome
@@ -328,9 +328,9 @@ In Ayurveda, raisins are considered a reproductive tonic (Vajikarna). They conta
 
 **Duration:** Do this for 4 weeks consistently to see noticeable results in energy, digestion, and skin.
 
-## Nutriwow Green Raisins
+## Foodondoor Green Raisins
 
-While black raisins are most commonly used for the morning ritual, Nutriwow's premium green raisins (kishmish) offer similar benefits with a sweeter, more delicate flavor. Sourced from Afghanistan and Iran — the world's finest raisin-producing regions — our raisins are:
+While black raisins are most commonly used for the morning ritual, Foodondoor's premium green raisins (kishmish) offer similar benefits with a sweeter, more delicate flavor. Sourced from Afghanistan and Iran — the world's finest raisin-producing regions — our raisins are:
 - **Naturally sun-dried** without sulfur dioxide
 - **Plump and juicy** — not dry or shriveled
 - **Available in 500g and 1Kg packs**
@@ -408,7 +408,7 @@ As we age, the brain naturally loses volume and cognitive function. The antioxid
 
 For vegetarians and vegans, walnuts are the best plant-based source of brain-supporting omega-3s.
 
-## Nutriwow Premium Walnuts
+## Foodondoor Premium Walnuts
 
 Our walnuts are sourced from Jammu & Kashmir — India's finest walnut-growing region, where the cool Himalayan climate produces exceptionally large, oil-rich kernels. Available in:
 - **Whole Walnuts** (in shell) — maximum freshness
@@ -500,7 +500,7 @@ The key mechanism: nuts increase satiety hormones (CCK, GLP-1) and reduce hunger
 3. **Eating as "extra" food:** Replace unhealthy snacks with dry fruits — don't add them on top.
 4. **Eating at night:** Dry fruits are best consumed in the morning or afternoon, not before bed.
 
-## Nutriwow's Weight Loss Pack
+## Foodondoor's Weight Loss Pack
 
 We offer a curated selection of weight-loss-friendly dry fruits:
 - **Premium Almonds** — California whole almonds, ideal for morning ritual
@@ -519,7 +519,7 @@ All products are natural, preservative-free, and FSSAI certified. Start your hea
     category: "Nuts",
     readTime: "6 min read",
     date: "April 20, 2025",
-    author: "Nutriwow Nutrition Team",
+    author: "Foodondoor Nutrition Team",
     authorRole: "Certified Nutritionists",
     tags: ["almonds", "health benefits", "badam", "nutrition", "immunity"],
     content: `
@@ -568,7 +568,7 @@ Nutritionists recommend eating 20–25 almonds (approximately 28g) per day. Soak
     category: "Nuts",
     readTime: "5 min read",
     date: "April 18, 2025",
-    author: "Nutriwow Nutrition Team",
+    author: "Foodondoor Nutrition Team",
     authorRole: "Certified Nutritionists",
     tags: ["cashews", "almonds", "kaju", "badam", "comparison"],
     content: `
@@ -612,7 +612,7 @@ There is no single winner — both cashews and almonds deserve a place in your d
     category: "Seeds",
     readTime: "5 min read",
     date: "April 15, 2025",
-    author: "Nutriwow Nutrition Team",
+    author: "Foodondoor Nutrition Team",
     authorRole: "Certified Nutritionists",
     tags: ["pumpkin seeds", "zinc", "magnesium", "men health", "women health"],
     content: `
@@ -652,7 +652,7 @@ A daily serving of 28–30g is ideal. They make an excellent addition to salads,
     category: "Dates",
     readTime: "5 min read",
     date: "April 12, 2025",
-    author: "Nutriwow Nutrition Team",
+    author: "Foodondoor Nutrition Team",
     authorRole: "Certified Nutritionists",
     tags: ["dates", "khajur", "Omani dates", "energy", "iron"],
     content: `
@@ -691,7 +691,7 @@ Date paste (made by blending soaked dates with water) can substitute sugar in ca
     category: "Makhana",
     readTime: "5 min read",
     date: "April 10, 2025",
-    author: "Nutriwow Nutrition Team",
+    author: "Foodondoor Nutrition Team",
     authorRole: "Certified Nutritionists",
     tags: ["makhana", "fox nuts", "weight loss", "low calorie"],
     content: `
@@ -732,7 +732,7 @@ Beyond weight loss, makhana is rich in magnesium and potassium, supporting heart
     category: "Healthy Mix",
     readTime: "6 min read",
     date: "April 8, 2025",
-    author: "Nutriwow Nutrition Team",
+    author: "Foodondoor Nutrition Team",
     authorRole: "Certified Nutritionists",
     tags: ["dry fruits for diabetics", "diabetes", "blood sugar", "low GI"],
     content: `
@@ -772,7 +772,7 @@ Always pair dry fruits with a protein source. Stick to unsweetened varieties. Ke
     category: "Nuts",
     readTime: "5 min read",
     date: "April 5, 2025",
-    author: "Nutriwow Nutrition Team",
+    author: "Foodondoor Nutrition Team",
     authorRole: "Certified Nutritionists",
     tags: ["pistachios", "pista", "heart health", "antioxidants"],
     content: `
@@ -815,7 +815,7 @@ A daily serving of 28–30g (approximately 49 kernels) provides meaningful healt
     category: "Berries",
     readTime: "5 min read",
     date: "April 3, 2025",
-    author: "Nutriwow Nutrition Team",
+    author: "Foodondoor Nutrition Team",
     authorRole: "Certified Nutritionists",
     tags: ["raisins", "kishmish", "iron", "energy", "digestion"],
     content: `
@@ -858,7 +858,7 @@ Soaking raisins overnight in water and eating them on an empty stomach in the mo
     category: "Healthy Mix",
     readTime: "6 min read",
     date: "April 1, 2025",
-    author: "Nutriwow Nutrition Team",
+    author: "Foodondoor Nutrition Team",
     authorRole: "Certified Nutritionists",
     tags: ["pregnancy", "dry fruits", "prenatal nutrition", "iron", "folate"],
     content: `
@@ -897,7 +897,7 @@ Always choose unsweetened, unsulphured dry fruits. Keep total daily intake to 30
     category: "Tips",
     readTime: "4 min read",
     date: "March 28, 2025",
-    author: "Nutriwow Nutrition Team",
+    author: "Foodondoor Nutrition Team",
     authorRole: "Certified Nutritionists",
     tags: ["storage tips", "dry fruits", "freshness", "shelf life"],
     content: `
@@ -1092,7 +1092,7 @@ export default function BlogPost() {
         category: dbPost.category || "Health",
         readTime: "5 min read",
         date: dbPost.publishedAt ? new Date(dbPost.publishedAt).toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" }) : "",
-        author: dbPost.author || "Nutriwow Team",
+        author: dbPost.author || "Foodondoor Team",
         authorRole: "Nutrition Expert",
         tags: dbPost.tags ? dbPost.tags.split(",").map((t: string) => t.trim()) : [],
         content: dbPost.content || "",

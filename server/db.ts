@@ -1712,7 +1712,7 @@ export async function getPageViews(since: Date) {
 // Visits whose referrer is one of our own dev / preview / dashboard environments.
 // Excluded from analytics so the dashboard reflects real visitors, not our own
 // testing traffic. Direct visits (referrer NULL) and real self-referrals from
-// the live site (nutriwow.in / nutriwow.vercel.app) are kept.
+// the live site (foodondoor.com / nutriwow.vercel.app) are kept.
 function notInternalTraffic() {
   return sql`(${pageViews.referrer} IS NULL OR (
     ${pageViews.referrer} NOT LIKE '%manus.computer%'

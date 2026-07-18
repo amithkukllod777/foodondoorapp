@@ -1,7 +1,7 @@
 /**
  * WhatsApp Meta Cloud API Service
  * Handles sending messages via Meta WhatsApp Business API
- * Phone Number: +91 99938 83710 (Nutriwow Business Number)
+ * Phone Number: +91 99938 83710 (Foodondoor Business Number)
  * Phone Number ID: 1110962362096644
  * WABA ID: 718666704638313
  * Account Mode: LIVE
@@ -61,7 +61,7 @@ export interface WhatsAppProductCampaignPayload {
   format?: "hero" | "carousel" | "catalog"; // "catalog" = Meta catalog product_list with live price/View/cart inside 24h window
 }
 
-const BASE_URL = process.env.PUBLIC_BASE_URL || process.env.NEXT_PUBLIC_SITE_URL || "https://www.nutriwow.in";
+const BASE_URL = process.env.PUBLIC_BASE_URL || process.env.NEXT_PUBLIC_SITE_URL || "https://www.foodondoor.com";
 
 export function parseProductCampaignPayload(message: string | null | undefined): WhatsAppProductCampaignPayload | null {
   if (!message) return null;
@@ -70,7 +70,7 @@ export function parseProductCampaignPayload(message: string | null | undefined):
     if (parsed?.kind !== "product_campaign" || !Array.isArray(parsed.products)) return null;
     return {
       kind: "product_campaign",
-      headline: String(parsed.headline || "Nutriwow Products"),
+      headline: String(parsed.headline || "Foodondoor Products"),
       body: String(parsed.body || ""),
       format: parsed.format === "carousel" || parsed.format === "catalog" ? parsed.format : "hero",
       products: parsed.products
@@ -276,7 +276,7 @@ export async function sendOrderConfirmation(params: {
   if (!(await isNotificationEnabled("newOrder"))) return { success: false };
   const cleanPhone = params.phone.replace(/\D/g, "");
   const phoneWithCountry = cleanPhone.startsWith("91") ? cleanPhone : `91${cleanPhone}`;
-  const bodyText = `🎉 *Order Confirmed!*\n\nHi ${params.customerName}!\n\nYour Nutriwow order *#${params.orderId}* has been confirmed.\n\n📦 *Items:* ${params.items}\n💰 *Total:* ₹${params.total}\n💳 *Payment:* ${params.paymentMethod}\n\nWe'll notify you when your order is shipped. Thank you for shopping with Nutriwow! 🌿`;
+  const bodyText = `🎉 *Order Confirmed!*\n\nHi ${params.customerName}!\n\nYour Foodondoor order *#${params.orderId}* has been confirmed.\n\n📦 *Items:* ${params.items}\n💰 *Total:* ₹${params.total}\n💳 *Payment:* ${params.paymentMethod}\n\nWe'll notify you when your order is shipped. Thank you for shopping with Foodondoor! 🌿`;
 
   let result: SendResult = { success: false };
 
@@ -475,8 +475,8 @@ export async function sendOrderShipped(params: {
   if (!(await isNotificationEnabled("orderShipped"))) return { success: false };
   const cleanPhone = params.phone.replace(/\D/g, "");
   const phoneWithCountry = cleanPhone.startsWith("91") ? cleanPhone : `91${cleanPhone}`;
-  const trackingPageUrl = `https://www.nutriwow.in/track-order?orderId=${params.orderId}`;
-  const bodyText = `🚚 *Order Shipped!*\n\nHi ${params.customerName}!\n\nGreat news! Your Nutriwow order *#${params.orderId}* has been shipped via ${params.shippingProvider || "our courier partner"}.\n\n📋 *AWB Code:* ${params.awbCode}\n⏰ Expected delivery: 3-5 business days\n\nThank you for choosing Nutriwow! 🌿`;
+  const trackingPageUrl = `https://www.foodondoor.com/track-order?orderId=${params.orderId}`;
+  const bodyText = `🚚 *Order Shipped!*\n\nHi ${params.customerName}!\n\nGreat news! Your Foodondoor order *#${params.orderId}* has been shipped via ${params.shippingProvider || "our courier partner"}.\n\n📋 *AWB Code:* ${params.awbCode}\n⏰ Expected delivery: 3-5 business days\n\nThank you for choosing Foodondoor! 🌿`;
 
   let result: SendResult = { success: false };
 
@@ -580,7 +580,7 @@ export async function sendOrderDelivered(params: {
   orderId: string;
 }): Promise<SendResult> {
   if (!(await isNotificationEnabled("orderDelivered"))) return { success: false };
-  const message = `✅ *Order Delivered!*\n\nHi ${params.customerName}!\n\nYour Nutriwow order *#${params.orderId}* has been delivered successfully! 🎉\n\nWe hope you love your products. Please share your experience:\n⭐ Rate your order at: www.nutriwow.in\n\nFor any queries, WhatsApp us at +91 99938 83710\n\nThank you for choosing Nutriwow! 🌿`;
+  const message = `✅ *Order Delivered!*\n\nHi ${params.customerName}!\n\nYour Foodondoor order *#${params.orderId}* has been delivered successfully! 🎉\n\nWe hope you love your products. Please share your experience:\n⭐ Rate your order at: www.foodondoor.com\n\nFor any queries, WhatsApp us at +91 99938 83710\n\nThank you for choosing Foodondoor! 🌿`;
 
   let result: SendResult = { success: false };
 
@@ -645,7 +645,7 @@ export async function sendAbandonedCartRecovery(params: {
   cartId: number;
 }): Promise<SendResult> {
   if (!(await isNotificationEnabled("abandonedCart"))) return { success: false };
-  const message = `🛒 *You left something behind!*\n\nHi ${params.customerName || "there"}!\n\nYou have items waiting in your Nutriwow cart:\n\n📦 ${params.cartItems}\n💰 *Cart Total:* ₹${params.cartTotal}\n\nComplete your order now and get *FREE shipping* on orders above ₹499! 🚚\n\n👉 Shop now: www.nutriwow.in\n\nOffer valid for limited time! ⏰`;
+  const message = `🛒 *You left something behind!*\n\nHi ${params.customerName || "there"}!\n\nYou have items waiting in your Foodondoor cart:\n\n📦 ${params.cartItems}\n💰 *Cart Total:* ₹${params.cartTotal}\n\nComplete your order now and get *FREE shipping* on orders above ₹499! 🚚\n\n👉 Shop now: www.foodondoor.com\n\nOffer valid for limited time! ⏰`;
 
   let result: SendResult = { success: false };
 
@@ -1064,7 +1064,7 @@ async function sendProductCarousel(
       ? `*₹${product.price}* ~₹${product.originalPrice}~ ${disc}% off`
       : `*₹${product.price}*`;
     const cardTitle = product.name
-      .replace(/^Nutriwow\s+/i, "")
+      .replace(/^Foodondoor\s+/i, "")
       .replace(/\s*\|.*$/, "")
       .replace(/\s+/g, " ")
       .trim()
@@ -1145,8 +1145,8 @@ async function sendProductCatalogList(
   const productItems = products.slice(0, 10).map((product) => ({
     product_retailer_id: String(product.id),
   }));
-  const headerText = (params.payload.headline || "Nutriwow Picks").replace(/\s+/g, " ").trim().slice(0, 60);
-  const bodyText = (params.payload.body || "Handpicked Nutriwow products for you.").replace(/\s+/g, " ").trim().slice(0, 1024);
+  const headerText = (params.payload.headline || "Foodondoor Picks").replace(/\s+/g, " ").trim().slice(0, 60);
+  const bodyText = (params.payload.body || "Handpicked Foodondoor products for you.").replace(/\s+/g, " ").trim().slice(0, 1024);
   const buttonText = (params.buttonText || "View products").replace(/\s+/g, " ").trim().slice(0, 20);
 
   let res: SendResult;
@@ -1166,13 +1166,13 @@ async function sendProductCatalogList(
           type: "product_list",
           header: { type: "text", text: headerText },
           body: { text: bodyText },
-          footer: { text: "Nutriwow" },
+          footer: { text: "Foodondoor" },
           action: {
             catalog_id: WHATSAPP_CATALOG_ID,
             button: buttonText,
             sections: [
               {
-                title: "Nutriwow Picks",
+                title: "Foodondoor Picks",
                 product_items: productItems,
               },
             ],
@@ -1341,7 +1341,7 @@ function getWhatsAppSafeImageUrl(imageUrl: string): string {
   // Vercel Image Optimization proxy — extract original URL
   if (imageUrl.includes("/_vercel/image")) {
     try {
-      const u = new URL(imageUrl, "https://www.nutriwow.in");
+      const u = new URL(imageUrl, "https://www.foodondoor.com");
       const original = u.searchParams.get("url");
       if (original) return original;
     } catch {}
@@ -1349,7 +1349,7 @@ function getWhatsAppSafeImageUrl(imageUrl: string): string {
 
   // Relative URLs — make absolute (Vercel Blob URLs should already be absolute)
   if (imageUrl.startsWith("/")) {
-    return `https://www.nutriwow.in${imageUrl}`;
+    return `https://www.foodondoor.com${imageUrl}`;
   }
 
   // Shopify CDN pattern: ...filename.ext?v=...
@@ -1415,7 +1415,7 @@ export async function sendChatbotMenu(params: {
   const cleanPhone = params.phone.replace(/\D/g, "");
   const phoneWithCountry = cleanPhone.startsWith("91") ? cleanPhone : `91${cleanPhone}`;
   const bodyText = params.greeting ||
-    `Namaste! 👋 *Nutriwow* mein aapka swagat hai! 🌿\n\nHum kaise madad kar sakte hain? Neeche se option choose karein:`;
+    `Namaste! 👋 *Foodondoor* mein aapka swagat hai! 🌿\n\nHum kaise madad kar sakte hain? Neeche se option choose karein:`;
 
   let result: SendResult = { success: false };
 
@@ -1475,12 +1475,12 @@ export async function sendChatbotMenu(params: {
       return { success: true, messageId: msgId };
     }
     // 3) Fallback: Plain text
-    const fallback = `${bodyText}\n\n📦 Track Order: www.nutriwow.in/track-order\n🙋 Support: +91 95463 34633\n🎁 Offers: www.nutriwow.in`;
+    const fallback = `${bodyText}\n\n📦 Track Order: www.foodondoor.com/track-order\n🙋 Support: +91 92431 77706\n🎁 Offers: www.foodondoor.com`;
     const r = await sendTextMessage(params.phone, fallback);
     saveBotReply(fallback, r.messageId);
     return r;
   } catch {
-    const fallback = `${bodyText}\n\n📦 Track Order: www.nutriwow.in/track-order\n🙋 Support: +91 95463 34633`;
+    const fallback = `${bodyText}\n\n📦 Track Order: www.foodondoor.com/track-order\n🙋 Support: +91 92431 77706`;
     const r = await sendTextMessage(params.phone, fallback);
     saveBotReply(fallback, r.messageId);
     return r;
@@ -1534,23 +1534,23 @@ export async function handleChatbotReply(params: {
           }
           return line;
         });
-        const trackMsg = `📦 *Aapke Recent Orders:*\n\n${orderLines.join("\n\n")}\n\n👉 Full details: www.nutriwow.in/track-order`;
+        const trackMsg = `📦 *Aapke Recent Orders:*\n\n${orderLines.join("\n\n")}\n\n👉 Full details: www.foodondoor.com/track-order`;
         await sendAndSave(trackMsg);
       } else {
-        const noOrderText = `📦 *Order Track*\n\nIs phone number se koi order nahi mila.\n\nAgar aapne dusre number se order kiya hai toh woh Order ID yahan type karein, ya website pe track karein:\n👉 www.nutriwow.in/track-order`;
+        const noOrderText = `📦 *Order Track*\n\nIs phone number se koi order nahi mila.\n\nAgar aapne dusre number se order kiya hai toh woh Order ID yahan type karein, ya website pe track karein:\n👉 www.foodondoor.com/track-order`;
         await sendAndSave(noOrderText);
       }
     } catch (err) {
       console.error("[WhatsApp] bot_track auto-lookup failed:", err);
-      await sendAndSave(`📦 *Order Track Karein*\n\nApna Order ID enter karein ya yahan track karein:\n👉 www.nutriwow.in/track-order`, "chatbot_track_order");
+      await sendAndSave(`📦 *Order Track Karein*\n\nApna Order ID enter karein ya yahan track karein:\n👉 www.foodondoor.com/track-order`, "chatbot_track_order");
     }
 
   } else if (buttonId === "bot_support" || buttonId === "Talk to Support") {
-    const supportText = `🙋 *Nutriwow Support Team*\n\nOur team is ready to help you!\n\n📞 *Direct Call:* +91 95463 34633\n💬 *WhatsApp:* wa.me/919546334633\n📧 *Email:* wecare@nutriwow.in\n⏰ *Timing:* Mon-Sat, 10 AM - 7 PM\n\nType your issue here and we'll respond shortly. 🌿`;
+    const supportText = `🙋 *Foodondoor Support Team*\n\nOur team is ready to help you!\n\n📞 *Direct Call:* +91 92431 77706\n💬 *WhatsApp:* wa.me/919243177706\n📧 *Email:* wecare@foodondoor.com\n⏰ *Timing:* Mon-Sat, 10 AM - 7 PM\n\nType your issue here and we'll respond shortly. 🌿`;
     await sendAndSave(supportText);
 
   } else if (buttonId === "bot_offers" || buttonId === "Offers and Deals") {
-    const offersText = `🎁 *Current Offers*\n\n✨ *SUPERSAVER10* — 10% OFF on all orders\n🚚 FREE Shipping on orders above ₹499\n🌰 Buy 2 Get 1 FREE on selected combos\n\n👉 Shop now: www.nutriwow.in\n\nAur offers ke liye subscribe karein! 💚`;
+    const offersText = `🎁 *Current Offers*\n\n✨ *SUPERSAVER10* — 10% OFF on all orders\n🚚 FREE Shipping on orders above ₹499\n🌰 Buy 2 Get 1 FREE on selected combos\n\n👉 Shop now: www.foodondoor.com\n\nAur offers ke liye subscribe karein! 💚`;
     await sendAndSave(offersText, "chatbot_offers");
   }
 }
@@ -1842,7 +1842,7 @@ export async function submitTemplateToMeta(templateData: {
     // Footer component (optional)
     components.push({
       type: "FOOTER",
-      text: "Nutriwow - Premium Dry Fruits & Healthy Snacks",
+      text: "Foodondoor - Premium Dry Fruits & Healthy Snacks",
     });
 
     // Buttons component (CTA button)

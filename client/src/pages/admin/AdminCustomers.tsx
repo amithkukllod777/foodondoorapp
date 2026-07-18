@@ -1,5 +1,5 @@
 /**
- * Nutriwow Admin - Customers Page
+ * Foodondoor Admin - Customers Page
  * DB-backed: derives customer list from real orders in DB via tRPC
  * Includes customer segmentation engine with color-coded badges and filters
  */

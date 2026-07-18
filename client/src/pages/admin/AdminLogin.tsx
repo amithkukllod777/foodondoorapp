@@ -83,7 +83,7 @@ export default function AdminLogin() {
             <ShieldCheck size={28} className="text-white" />
           </div>
           <h1 className="text-xl font-bold text-gray-900">Admin Panel</h1>
-          <p className="text-sm text-gray-500 mt-1">Nutriwow Store Management</p>
+          <p className="text-sm text-gray-500 mt-1">Foodondoor Store Management</p>
         </div>
 
         {view === "login" && (
@@ -92,7 +92,7 @@ export default function AdminLogin() {
               <label className="block text-xs font-semibold text-gray-700 mb-1.5">Email</label>
               <div className="relative">
                 <Mail size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="admin@nutriwow.in"
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="admin@foodondoor.com"
                   className="w-full pl-9 pr-4 py-2.5 border-2 border-gray-200 rounded-xl text-sm focus:outline-none focus:border-nutrigreen transition-colors"
                   autoFocus autoComplete="email" />
               </div>

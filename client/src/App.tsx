@@ -113,13 +113,13 @@ function AppDownloadBanner() {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-30 sm:hidden pb-safe">
       <div className="mx-3 mb-3 rounded-2xl shadow-xl flex items-center gap-3 px-4 py-3" style={{ background: "#1A1A1A", border: "1px solid #2E2E2E" }}>
-        <img src="/icon-192.png" alt="Nutriwow" className="w-10 h-10 rounded-xl flex-shrink-0" />
+        <img src="/icon-192.png" alt="Foodondoor" className="w-10 h-10 rounded-xl flex-shrink-0" />
         <div className="flex-1 min-w-0">
-          <p className="text-sm font-bold text-white leading-tight">Nutriwow App</p>
+          <p className="text-sm font-bold text-white leading-tight">Foodondoor App</p>
           <p className="text-[11px]" style={{ color: "#9E9E9E" }}>Better experience on the app</p>
         </div>
         <a
-          href="https://play.google.com/store/apps/details?id=in.nutriwow.app"
+          href="https://play.google.com/store/apps/details?id=com.foodondoor.app"
           target="_blank"
           rel="noopener noreferrer"
           className="flex-shrink-0 bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition-colors"

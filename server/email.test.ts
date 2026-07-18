@@ -7,9 +7,9 @@ describe("Email Service", () => {
     expect(result).toBe(true);
   }, 15000);
 
-  it("should send a test OTP email to wecare@nutriwow.in", async () => {
+  it("should send a test OTP email to wecare@foodondoor.com", async () => {
     const result = await sendOtpEmail({
-      customerEmail: "wecare@nutriwow.in",
+      customerEmail: "wecare@foodondoor.com",
       otp: "123456",
       purpose: "login",
     });

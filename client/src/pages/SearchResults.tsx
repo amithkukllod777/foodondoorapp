@@ -57,8 +57,8 @@ export default function SearchResults() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title={query ? `Search: "${query}" - Nutriwow` : "Search - Nutriwow"}
-        description={`Search results for "${query}" on Nutriwow. Find premium dry fruits, nuts, seeds and healthy snacks.`}
+        title={query ? `Search: "${query}" - Foodondoor` : "Search - Foodondoor"}
+        description={`Search results for "${query}" on Foodondoor. Find premium dry fruits, nuts, seeds and healthy snacks.`}
         url={`/search?q=${encodeURIComponent(query)}`}
         noIndex
       />

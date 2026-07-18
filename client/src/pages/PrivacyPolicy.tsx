@@ -15,8 +15,8 @@ export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title="Privacy Policy | Nutriwow"
-        description="Learn how Nutriwow collects, uses, and protects your personal information when you shop for premium dry fruits and healthy snacks."
+        title="Privacy Policy | Foodondoor"
+        description="Learn how Foodondoor collects, uses, and protects your personal information when you shop for premium dry fruits and healthy snacks."
         url="/privacy-policy"
       />
       <AnnouncementBar />
@@ -33,7 +33,7 @@ export default function PrivacyPolicy() {
             <section>
               <h2 className="text-lg font-semibold text-foreground mb-2">1. Introduction</h2>
               <p>
-                Nutriwow is a brand of <strong>Foodondoor Private Limited</strong> ("we", "us", "our"), a company registered in India. We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit <strong>www.nutriwow.in</strong> or make a purchase from us.
+                Foodondoor is a brand of <strong>Foodondoor Private Limited</strong> ("we", "us", "our"), a company registered in India. We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit <strong>www.foodondoor.com</strong> or make a purchase from us.
               </p>
               <p className="mt-2">
                 <strong>Registered Company:</strong> Foodondoor Private Limited<br />
@@ -113,7 +113,7 @@ export default function PrivacyPolicy() {
                 <li>Request deletion of your personal data (subject to legal obligations).</li>
                 <li>Opt out of promotional communications at any time.</li>
               </ul>
-              <p className="mt-2">To exercise these rights, contact us at <a href="mailto:wecare@nutriwow.in" className="text-primary underline">wecare@nutriwow.in</a>.</p>
+              <p className="mt-2">To exercise these rights, contact us at <a href="mailto:wecare@foodondoor.com" className="text-primary underline">wecare@foodondoor.com</a>.</p>
             </section>
 
             <section>
@@ -129,9 +129,9 @@ export default function PrivacyPolicy() {
                 For any privacy-related queries, please contact:<br />
                 <strong>Company:</strong> Foodondoor Private Limited<br />
                 <strong>Address:</strong> Sherpur Square, Indore Bhopal Highway, Sehore, Madhya Pradesh – 466001<br />
-                <strong>Email:</strong> <a href="mailto:wecare@nutriwow.in" className="text-primary underline">wecare@nutriwow.in</a><br />
-                <strong>WhatsApp:</strong> +91 95463 34633<br />
-                <strong>Website:</strong> www.nutriwow.in
+                <strong>Email:</strong> <a href="mailto:wecare@foodondoor.com" className="text-primary underline">wecare@foodondoor.com</a><br />
+                <strong>WhatsApp:</strong> +91 92431 77706<br />
+                <strong>Website:</strong> www.foodondoor.com
               </p>
             </section>
 

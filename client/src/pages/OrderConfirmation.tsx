@@ -1,5 +1,5 @@
 /*
- * Nutriwow Clone - Order Confirmation Page
+ * Foodondoor Clone - Order Confirmation Page
  * Design: Vibrant Indian Grocery Modern
  */
 
@@ -51,7 +51,7 @@ function ReferralCard() {
     );
   }
 
-  const shareMsg = `Hey! Use my code ${referralData.code} to shop premium dry fruits on Nutriwow and get great deals! https://www.nutriwow.in?ref=${referralData.code}`;
+  const shareMsg = `Hey! Use my code ${referralData.code} to shop premium dry fruits on Foodondoor and get great deals! https://www.foodondoor.com?ref=${referralData.code}`;
   const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareMsg)}`;
 
   const handleCopy = () => {
@@ -173,7 +173,7 @@ export default function OrderConfirmation() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      <SEO title="Order Confirmed | Nutriwow" description="" noIndex={true} />
+      <SEO title="Order Confirmed | Foodondoor" description="" noIndex={true} />
       <div data-print="hide"><AnnouncementBar /></div>
       <div data-print="hide"><Header /></div>
 
@@ -188,7 +188,7 @@ export default function OrderConfirmation() {
               </div>
               <h1 className="text-2xl font-bold mb-1">Order Placed!</h1>
               <p className="text-sm opacity-90">
-                Thank you for shopping with Nutriwow
+                Thank you for shopping with Foodondoor
               </p>
             </div>
 
@@ -335,7 +335,7 @@ export default function OrderConfirmation() {
             {/* Invoice Header */}
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", borderBottom: "2px solid #222", paddingBottom: "12px", marginBottom: "16px" }}>
               <div>
-                <img src="/logo.png" alt="Nutriwow" style={{ height: "40px", marginBottom: "6px" }} />
+                <img src="/logo.png" alt="Foodondoor" style={{ height: "40px", marginBottom: "6px" }} />
                 <p style={{ fontWeight: 700, fontSize: "14px", margin: 0 }}>Foodondoor Private Limited</p>
                 <p style={{ margin: 0, fontSize: "12px" }}>FSSAI: 11424999000246</p>
                 <p style={{ margin: 0, fontSize: "12px" }}>Sherpur Square, Sehore, MP - 466001</p>
@@ -415,9 +415,9 @@ export default function OrderConfirmation() {
 
             {/* Footer */}
             <div style={{ borderTop: "1px solid #ccc", paddingTop: "12px", textAlign: "center", fontSize: "11px", color: "#666" }}>
-              <p style={{ margin: "0 0 4px", fontWeight: 600, color: "#222" }}>Thank you for shopping with Nutriwow!</p>
-              <p style={{ margin: 0 }}>Contact: wecare@nutriwow.in | +91 95463 34633</p>
-              <p style={{ margin: 0 }}>www.nutriwow.in</p>
+              <p style={{ margin: "0 0 4px", fontWeight: 600, color: "#222" }}>Thank you for shopping with Foodondoor!</p>
+              <p style={{ margin: 0 }}>Contact: wecare@foodondoor.com | +91 92431 77706</p>
+              <p style={{ margin: 0 }}>www.foodondoor.com</p>
             </div>
           </div>
         </div>

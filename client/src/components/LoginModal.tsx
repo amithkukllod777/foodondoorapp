@@ -183,7 +183,7 @@ export default function LoginModal() {
             {step === "name" && "Welcome! 🎉"}
           </h2>
           <p className="text-primary-foreground/80 text-sm mt-1">
-            {step === "mobile" && "Welcome to Nutriwow"}
+            {step === "mobile" && "Welcome to Foodondoor"}
             {step === "otp" && `OTP sent to WhatsApp +91 ${mobile}`}
             {step === "name" && "Tell us about yourself"}
           </p>

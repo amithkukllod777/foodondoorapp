@@ -1,11 +1,11 @@
 import type { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
-  appId: "in.nutriwow.app",
-  appName: "Nutriwow",
+  appId: "com.foodondoor.app",
+  appName: "Foodondoor",
   webDir: "dist/public",
   server: {
-    url: "https://www.nutriwow.in",
+    url: "https://www.foodondoor.com",
     cleartext: false,
   },
   android: {
@@ -27,7 +27,7 @@ const config: CapacitorConfig = {
     },
     StatusBar: {
       style: "LIGHT",
-      backgroundColor: "#2d6a4f",
+      backgroundColor: "#1A34A8",
     },
     Keyboard: {
       resize: "body",

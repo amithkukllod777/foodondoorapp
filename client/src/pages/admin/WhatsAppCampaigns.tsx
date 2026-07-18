@@ -481,7 +481,7 @@ export default function WhatsAppCampaigns() {
                   <div>
                     <label className="block text-sm font-medium mb-1">Message Body</label>
                     <Input
-                      placeholder="e.g., Up to 20% off on handpicked Nutriwow products"
+                      placeholder="e.g., Up to 20% off on handpicked Foodondoor products"
                       value={productBody}
                       onChange={(e) => setProductBody(e.target.value)}
                     />

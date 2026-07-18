@@ -1,5 +1,5 @@
 /**
- * Nutriwow Clone - Product Detail Page
+ * Foodondoor Clone - Product Detail Page
  * Design: Soft clay 3D — Baloo 2 headings, peach accents, cream bg
  */
 
@@ -83,8 +83,8 @@ const PRODUCT_FAQS = [
   { q: "Is free shipping available?", a: "Yes! We offer free shipping on all orders. No minimum order value required." },
   { q: "What is your return policy?", a: "We offer a 7-day easy return policy. If you receive a damaged or incorrect product, contact us within 7 days of delivery and we will arrange a replacement or full refund." },
   { q: "How fresh are the products?", a: "All our products are sourced directly from farms and processed in FSSAI-certified facilities. Each product has a minimum shelf life of 3-6 months from the date of dispatch. We ship fresh stock weekly." },
-  { q: "Are the products 100% natural?", a: "Yes. All Nutriwow products are 100% natural with no artificial preservatives, colours, or flavours. We believe in clean, honest food." },
-  { q: "Can I change or cancel my order?", a: "Orders can be cancelled or modified within 2 hours of placement. After that, the order enters processing and cannot be changed. Please contact us immediately at orders@nutriwow.in." },
+  { q: "Are the products 100% natural?", a: "Yes. All Foodondoor products are 100% natural with no artificial preservatives, colours, or flavours. We believe in clean, honest food." },
+  { q: "Can I change or cancel my order?", a: "Orders can be cancelled or modified within 2 hours of placement. After that, the order enters processing and cannot be changed. Please contact us immediately at orders@foodondoor.com." },
 ];
 
 // Owner asked to hide the weight selector on all products for now. Flip to
@@ -92,7 +92,7 @@ const PRODUCT_FAQS = [
 const SHOW_WEIGHT_SELECTOR = false;
 
 const defaultDetail = {
-  description: "Nutriwow brings you the finest quality dry fruits and healthy snacks, sourced directly from the best farms. Each product is carefully selected, processed under hygienic conditions, and packed fresh to retain maximum nutrition and flavour.",
+  description: "Foodondoor brings you the finest quality dry fruits and healthy snacks, sourced directly from the best farms. Each product is carefully selected, processed under hygienic conditions, and packed fresh to retain maximum nutrition and flavour.",
   highlights: [
     "Premium quality, handpicked produce",
     "No artificial preservatives or additives",
@@ -678,7 +678,7 @@ export default function ProductDetail() {
 
             {/* Right - Details */}
             <div>
-              <p className="text-xs font-semibold text-nutrigold uppercase tracking-wider mb-1">Nutriwow</p>
+              <p className="text-xs font-semibold text-nutrigold uppercase tracking-wider mb-1">Foodondoor</p>
               <div className="flex items-start justify-between gap-3 mb-3">
                 <h1 className="text-xl sm:text-2xl font-bold text-foreground leading-snug">
                   {product.name}
@@ -934,7 +934,7 @@ export default function ProductDetail() {
               <div className="flex items-center gap-2 mt-4">
                 <span className="text-xs text-muted-foreground font-medium">Share:</span>
                 <a
-                  href={`https://wa.me/?text=${encodeURIComponent(`Check out ${product.name} on Nutriwow! 🥜\n₹${effectivePrice}\nhttps://www.nutriwow.in/products/${product.handle}`)}`}
+                  href={`https://wa.me/?text=${encodeURIComponent(`Check out ${product.name} on Foodondoor! 🥜\n₹${effectivePrice}\nhttps://www.foodondoor.com/products/${product.handle}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-8 h-8 rounded-full flex items-center justify-center shadow-clay-sm hover:scale-110 transition-all"
@@ -944,7 +944,7 @@ export default function ProductDetail() {
                 </a>
                 <button
                   onClick={() => {
-                    navigator.clipboard.writeText(`https://www.nutriwow.in/products/${product.handle}`);
+                    navigator.clipboard.writeText(`https://www.foodondoor.com/products/${product.handle}`);
                     toast.success("Link copied!");
                   }}
                   className="w-8 h-8 rounded-full bg-card flex items-center justify-center shadow-clay-sm hover:scale-110 transition-all"
@@ -956,8 +956,8 @@ export default function ProductDetail() {
                     onClick={() => {
                       navigator.share({
                         title: product.name,
-                        text: `Check out ${product.name} on Nutriwow! 🥜 ₹${effectivePrice}`,
-                        url: `https://www.nutriwow.in/products/${product.handle}`,
+                        text: `Check out ${product.name} on Foodondoor! 🥜 ₹${effectivePrice}`,
+                        url: `https://www.foodondoor.com/products/${product.handle}`,
                       });
                     }}
                     className="w-8 h-8 rounded-full bg-card flex items-center justify-center shadow-clay-sm hover:scale-110 transition-all"

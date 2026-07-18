@@ -159,8 +159,8 @@ export default function FAQ() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title="Frequently Asked Questions | Nutriwow"
-        description="Find answers to common questions about Nutriwow's dry fruits, ordering, shipping, payments, and returns. Get help with your queries."
+        title="Frequently Asked Questions | Foodondoor"
+        description="Find answers to common questions about Foodondoor's dry fruits, ordering, shipping, payments, and returns. Get help with your queries."
         url="/faq"
         keywords="nutriwow faq, dry fruits questions, nutriwow shipping, nutriwow returns, nutriwow payment methods"
         jsonLd={[faqJsonLd]}

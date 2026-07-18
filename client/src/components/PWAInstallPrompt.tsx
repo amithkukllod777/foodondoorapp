@@ -65,14 +65,14 @@ export default function PWAInstallPrompt() {
         {/* App icon */}
         <img
           src="/icon-192.png"
-          alt="Nutriwow"
+          alt="Foodondoor"
           className="h-12 w-12 shrink-0 rounded-xl"
         />
 
         {/* Text */}
         <div className="min-w-0 flex-1">
           <p className="font-serif text-sm font-semibold text-gray-800 leading-tight">
-            Install Nutriwow App
+            Install Foodondoor App
           </p>
           <p className="text-xs text-gray-500 mt-0.5">
             Quick access &amp; offline browsing

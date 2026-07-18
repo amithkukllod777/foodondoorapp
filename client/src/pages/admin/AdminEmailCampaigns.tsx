@@ -294,7 +294,7 @@ function ResendCard({ configured, from }: { configured: boolean; from?: string }
       <p className="text-[12px] text-violet-700 mb-3">
         Resend gives far better inbox placement than Gmail SMTP. Paste your API key from{" "}
         <a href="https://resend.com/api-keys" target="_blank" rel="noopener noreferrer" className="underline font-medium">resend.com/api-keys</a>.
-        To send to customers you must <a href="https://resend.com/domains" target="_blank" rel="noopener noreferrer" className="underline font-medium">verify your domain</a> and use a sender on it (e.g. <code className="bg-violet-100 px-1 rounded">noreply@nutriwow.in</code>).
+        To send to customers you must <a href="https://resend.com/domains" target="_blank" rel="noopener noreferrer" className="underline font-medium">verify your domain</a> and use a sender on it (e.g. <code className="bg-violet-100 px-1 rounded">noreply@foodondoor.com</code>).
       </p>
       <div className="space-y-2">
         <input
@@ -302,7 +302,7 @@ function ResendCard({ configured, from }: { configured: boolean; from?: string }
           className="w-full px-3 py-2 text-[13px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-400/30 focus:border-violet-400 font-mono"
         />
         <input
-          type="text" value={fromAddr} onChange={(e) => setFromAddr(e.target.value)} placeholder='From (e.g. Nutriwow <noreply@nutriwow.in>)'
+          type="text" value={fromAddr} onChange={(e) => setFromAddr(e.target.value)} placeholder='From (e.g. Foodondoor <noreply@foodondoor.com>)'
           className="w-full px-3 py-2 text-[13px] border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-400/30 focus:border-violet-400"
         />
         <div className="flex gap-2">
@@ -493,7 +493,7 @@ function CampaignEditor({ initial, info, onBack }: {
       .map((p) => ({
         name: p.name,
         price: p.price,
-        url: `https://nutriwow.in/products/${p.handle}`,
+        url: `https://foodondoor.com/products/${p.handle}`,
         image: p.image || (Array.isArray(p.images) ? p.images[0] : undefined),
       }));
 

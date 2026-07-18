@@ -333,7 +333,7 @@ export async function buildApp() {
                       catch (e) { console.error("[WA order-confirm] status update failed", e); }
                       const inv = await generateOrderInvoice(ord);
                       if (inv?.url) {
-                        await sendDocumentMessage(phone, inv.url, `Invoice-${ord.id}.pdf`, `🧾 Tax invoice for your order #${ord.id}. Thank you for shopping with Nutriwow! 🌿`);
+                        await sendDocumentMessage(phone, inv.url, `Invoice-${ord.id}.pdf`, `🧾 Tax invoice for your order #${ord.id}. Thank you for shopping with Foodondoor! 🌿`);
                       } else {
                         await sendTextMessage(phone, `Thank you for confirming order #${ord.id}! We're preparing it now. 🌿`);
                       }
@@ -371,14 +371,14 @@ export async function buildApp() {
                 } else if (isReturnKeyword) {
                   sendChatbotMenu({
                     phone,
-                    greeting: `↩️ *Return / Refund*\n\nHamari return policy ke liye:\n👉 www.nutriwow.in/return-policy\n\nHamari team se baat karne ke liye neeche option choose karein:`,
+                    greeting: `↩️ *Return / Refund*\n\nHamari return policy ke liye:\n👉 www.foodondoor.com/return-policy\n\nHamari team se baat karne ke liye neeche option choose karein:`,
                   }).catch(() => {});
                 } else if (isOfferKeyword) {
                   handleChatbotReply({ phone, buttonId: "bot_offers", customerName: contactName || undefined }).catch(() => {});
                 } else if (isProductKeyword) {
                   sendChatbotMenu({
                     phone,
-                    greeting: `🌰 *Nutriwow Products*\n\nHum premium quality dry fruits, nuts, seeds aur healthy snacks offer karte hain!\n\n👉 Shop: www.nutriwow.in\n\nKisi specific product ke baare mein jaanna chahte hain?`,
+                    greeting: `🌰 *Foodondoor Products*\n\nHum premium quality dry fruits, nuts, seeds aur healthy snacks offer karte hain!\n\n👉 Shop: www.foodondoor.com\n\nKisi specific product ke baare mein jaanna chahte hain?`,
                   }).catch(() => {});
                 }
                 // If none of the keywords match, no auto-reply (admin will reply manually)
@@ -546,7 +546,7 @@ export async function buildApp() {
   });
 
   // Courier tracking webhook — Shiprocket / iThink POST shipment status updates here.
-  // Configure in the courier panel with URL https://www.nutriwow.in/api/shipping/webhook
+  // Configure in the courier panel with URL https://www.foodondoor.com/api/shipping/webhook
   // (Shiprocket sends the panel's token in the `x-api-key` header; iThink can append
   // ?token=... ). This auto-advances the matching order (e.g. shipped → delivered) and
   // fires the customer WhatsApp + email notifications, so status no longer needs a
@@ -608,7 +608,7 @@ export async function buildApp() {
   // Diagnostic: list the iThink pickup/warehouse addresses (with their ids) so the
   // owner can find the correct ITHINK_PICKUP_ID after setting up a fresh iThink
   // account. Open in a browser:
-  //   https://www.nutriwow.in/api/shipping/ithink-pickups?token=<SHIPPING_WEBHOOK_TOKEN>
+  //   https://www.foodondoor.com/api/shipping/ithink-pickups?token=<SHIPPING_WEBHOOK_TOKEN>
   app.get("/api/shipping/ithink-pickups", async (req, res) => {
     const expectedToken = process.env.SHIPPING_WEBHOOK_TOKEN;
     const provided = (req.query.token as string) || (req.headers["x-api-key"] as string) || "";
@@ -634,7 +634,7 @@ export async function buildApp() {
         ],
         target: {
           namespace: "android_app",
-          package_name: "in.nutriwow.app",
+          package_name: "com.foodondoor.app",
           sha256_cert_fingerprints: [
             "3C:C7:AE:F8:6D:DE:88:35:65:12:9D:64:C4:30:E9:5A:C5:50:D1:4B:51:71:4D:17:18:69:23:8C:9B:83:21:28",
           ],
@@ -659,7 +659,7 @@ Disallow: /checkout
 Disallow: /order-confirmation
 Disallow: /payment-status
 
-Sitemap: https://www.nutriwow.in/sitemap.xml
+Sitemap: https://www.foodondoor.com/sitemap.xml
 `);
   });
 
@@ -712,7 +712,7 @@ Sitemap: https://www.nutriwow.in/sitemap.xml
 
   // ─── SEO: sitemap.xml ───────────────────────────────────────────────────────
   app.get("/sitemap.xml", async (_req, res) => {
-    const BASE = "https://www.nutriwow.in";
+    const BASE = "https://www.foodondoor.com";
     const now = new Date().toISOString().split("T")[0];
     const staticPages = [
       { url: "/", priority: "1.0", changefreq: "daily" },
@@ -814,7 +814,7 @@ ${allUrls.map(u => `  <url>
   // Google Shopping XML feed (also compatible with Microsoft Bing Shopping)
   app.get("/feed/google-shopping.xml", async (_req, res) => {
     try {
-      const BASE = "https://www.nutriwow.in";
+      const BASE = "https://www.foodondoor.com";
       const products = await getFeedProducts();
       const esc = (s: string) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/&amp;amp;/g, '&amp;');
       // Return the LARGEST version of an image for Merchant Center (high-resolution).
@@ -830,7 +830,7 @@ ${allUrls.map(u => `  <url>
       const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
   <channel>
-    <title>Nutriwow India - Premium Dry Fruits &amp; Nuts</title>
+    <title>Foodondoor India - Premium Dry Fruits &amp; Nuts</title>
     <link>${BASE}</link>
     <description>Premium quality dry fruits, nuts, seeds and healthy snacks</description>
 ${products.map(p => {
@@ -849,7 +849,7 @@ ${extra.map(u => `      <g:additional_image_link>${esc(u)}</g:additional_image_l
       <g:price>${listPrice}.00 INR</g:price>
 ${hasSale ? `      <g:sale_price>${p.price}.00 INR</g:sale_price>` : ''}
       <g:availability>${p.available !== false ? 'in stock' : 'out of stock'}</g:availability>
-      <g:brand>Nutriwow</g:brand>
+      <g:brand>Foodondoor</g:brand>
       <g:mpn>${p.id}</g:mpn>
       <g:condition>new</g:condition>
       <g:product_type>${esc(p.category)}</g:product_type>
@@ -873,7 +873,7 @@ ${hasSale ? `      <g:sale_price>${p.price}.00 INR</g:sale_price>` : ''}
   // Facebook / Meta Product Catalog feed (CSV format — most compatible)
   app.get("/feed/facebook-catalog.csv", async (_req, res) => {
     try {
-      const BASE = "https://www.nutriwow.in";
+      const BASE = "https://www.foodondoor.com";
       const products = await getFeedProducts();
       const escCsv = (s: string) => '"' + String(s).replace(/"/g, '""').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;amp;/g, '&') + '"';
       const header = 'id,title,description,availability,condition,price,link,image_link,brand,product_type';
@@ -886,7 +886,7 @@ ${hasSale ? `      <g:sale_price>${p.price}.00 INR</g:sale_price>` : ''}
         escCsv(p.price + ' INR'),
         escCsv(BASE + '/products/' + p.handle),
         escCsv(p.image),
-        escCsv('Nutriwow'),
+        escCsv('Foodondoor'),
         escCsv(p.category),
       ].join(','));
       res.type('text/csv');
@@ -901,7 +901,7 @@ ${hasSale ? `      <g:sale_price>${p.price}.00 INR</g:sale_price>` : ''}
   // Facebook / Meta Product Catalog feed (XML format)
   app.get("/feed/facebook-catalog.xml", async (_req, res) => {
     try {
-      const BASE = "https://www.nutriwow.in";
+      const BASE = "https://www.foodondoor.com";
       const products = await getFeedProducts();
       const esc = (s: string) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/&amp;amp;/g, '&amp;');
       const xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -915,7 +915,7 @@ ${products.map(p => `  <entry>
     <price>${p.price}.00 INR</price>
     <link>${BASE}/products/${p.handle}</link>
     <image_link>${p.image}</image_link>
-    <brand>Nutriwow</brand>
+    <brand>Foodondoor</brand>
     <product_type>${esc(p.category)}</product_type>
   </entry>`).join('\n')}
 </feed>`;
@@ -996,13 +996,13 @@ ${products.map(p => `  <entry>
     } catch (e) { console.error("[EmailTrack] click error:", e); }
     // SECURITY: only redirect to our own domains. Redirecting to an arbitrary
     // attacker-supplied `url` is an open redirect usable to phish off the trusted
-    // nutriwow.in domain. Off-domain / malformed targets fall back to the homepage.
-    let dest = "https://www.nutriwow.in";
+    // foodondoor.com domain. Off-domain / malformed targets fall back to the homepage.
+    let dest = "https://www.foodondoor.com";
     try {
       if (url) {
         const u = new URL(url);
         const host = u.hostname.toLowerCase();
-        const ownDomain = host === "nutriwow.in" || host.endsWith(".nutriwow.in")
+        const ownDomain = host === "foodondoor.com" || host.endsWith(".foodondoor.com")
           || host === "nutriwowindia.com" || host.endsWith(".nutriwowindia.com");
         if (u.protocol === "https:" && ownDomain) dest = u.toString();
       }
@@ -1031,18 +1031,18 @@ ${products.map(p => `  <entry>
       return;
     }
     await addEmailUnsubscribe(email, "one-click");
-    res.send(unsubPage("You have been unsubscribed from Nutriwow marketing emails.", true));
+    res.send(unsubPage("You have been unsubscribed from Foodondoor marketing emails.", true));
   });
 
   function escHtml(s: string) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
   function unsubPage(msg: string, success: boolean) {
-    return `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Unsubscribe - Nutriwow</title>
+    return `<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Unsubscribe - Foodondoor</title>
     <style>body{font-family:Arial,sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0;background:#f9fafb}
     .card{background:#fff;border-radius:16px;padding:40px;max-width:400px;text-align:center;box-shadow:0 4px 24px rgba(0,0,0,.08)}
     .icon{font-size:48px;margin-bottom:16px}h1{font-size:20px;color:#1a1a1a;margin:0 0 8px}p{color:#666;font-size:14px;line-height:1.5}
     a{color:#43A047;text-decoration:none;font-weight:600}</style></head>
     <body><div class="card"><div class="icon">${success ? "✓" : "⚠"}</div><h1>${success ? "Unsubscribed" : "Error"}</h1>
-    <p>${escHtml(msg)}</p><p style="margin-top:20px"><a href="https://www.nutriwow.in">Visit Nutriwow</a></p></div></body></html>`;
+    <p>${escHtml(msg)}</p><p style="margin-top:20px"><a href="https://www.foodondoor.com">Visit Foodondoor</a></p></div></body></html>`;
   }
 
   // ─── tRPC API ────────────────────────────────────────────────────────────────

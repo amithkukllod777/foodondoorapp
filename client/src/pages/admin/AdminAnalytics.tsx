@@ -1,5 +1,5 @@
 /*
- * Nutriwow Admin - Analytics Page
+ * Foodondoor Admin - Analytics Page
  * DB-backed: order analytics + page view traffic analytics with date range filter
  */
 
@@ -1006,7 +1006,7 @@ export default function AdminAnalytics() {
                         <td className="py-2 px-2 text-center">
                           {cart.customerPhone ? (
                             <a
-                              href={`https://wa.me/91${cart.customerPhone.replace(/\D/g, "").slice(-10)}?text=${encodeURIComponent("Hi! We noticed you left some items in your cart at Nutriwow. Can we help you complete your order?")}`}
+                              href={`https://wa.me/91${cart.customerPhone.replace(/\D/g, "").slice(-10)}?text=${encodeURIComponent("Hi! We noticed you left some items in your cart at Foodondoor. Can we help you complete your order?")}`}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="inline-flex items-center gap-1 text-[10px] font-medium text-green-700 hover:text-green-800 bg-green-50 px-2 py-1 rounded"

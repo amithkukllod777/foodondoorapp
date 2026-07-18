@@ -15,8 +15,8 @@ export default function ReturnPolicy() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title="Return Policy | Nutriwow"
-        description="Nutriwow's return policy for premium dry fruits and healthy snacks. Understand our return process, conditions, and timelines."
+        title="Return Policy | Foodondoor"
+        description="Foodondoor's return policy for premium dry fruits and healthy snacks. Understand our return process, conditions, and timelines."
         url="/return-policy"
       />
       <AnnouncementBar />
@@ -33,7 +33,7 @@ export default function ReturnPolicy() {
             <section>
               <h2 className="text-lg font-semibold text-foreground mb-2">1. Our Return Commitment</h2>
               <p>
-                At Nutriwow (a brand of <strong>Foodondoor Private Limited</strong>), we take pride in the quality of our products. If you are not fully satisfied with your purchase, we are here to help. Please read our return policy carefully to understand the conditions and process for returning products.
+                At Foodondoor (a brand of <strong>Foodondoor Private Limited</strong>), we take pride in the quality of our products. If you are not fully satisfied with your purchase, we are here to help. Please read our return policy carefully to understand the conditions and process for returning products.
               </p>
             </section>
 
@@ -74,8 +74,8 @@ export default function ReturnPolicy() {
                 <li>
                   <strong>Contact Us:</strong> Reach out within 7 days of delivery via:
                   <ul className="list-disc pl-5 mt-1 space-y-1">
-                    <li>WhatsApp: <strong>+91 95463 34633</strong></li>
-                    <li>Email: <a href="mailto:wecare@nutriwow.in" className="text-primary underline">wecare@nutriwow.in</a></li>
+                    <li>WhatsApp: <strong>+91 92431 77706</strong></li>
+                    <li>Email: <a href="mailto:wecare@foodondoor.com" className="text-primary underline">wecare@foodondoor.com</a></li>
                   </ul>
                 </li>
                 <li><strong>Provide Details:</strong> Share your Order ID, the item(s) you wish to return, and the reason for return.</li>
@@ -120,8 +120,8 @@ export default function ReturnPolicy() {
                 For return-related queries, please contact:<br />
                 <strong>Company:</strong> Foodondoor Private Limited<br />
                 <strong>Address:</strong> Sherpur Square, Indore Bhopal Highway, Sehore, Madhya Pradesh – 466001<br />
-                <strong>Email:</strong> <a href="mailto:wecare@nutriwow.in" className="text-primary underline">wecare@nutriwow.in</a><br />
-                <strong>WhatsApp:</strong> +91 95463 34633<br />
+                <strong>Email:</strong> <a href="mailto:wecare@foodondoor.com" className="text-primary underline">wecare@foodondoor.com</a><br />
+                <strong>WhatsApp:</strong> +91 92431 77706<br />
                 <strong>Hours:</strong> Monday to Saturday, 9 AM – 6 PM IST
               </p>
             </section>

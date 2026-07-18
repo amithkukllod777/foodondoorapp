@@ -1,5 +1,5 @@
 /*
- * Nutriwow - GST Compliant Invoice Component
+ * Foodondoor - GST Compliant Invoice Component
  * Printable tax invoice with CGST/SGST or IGST breakdown.
  * Opens in a new window for print/PDF via window.print().
  */
@@ -13,7 +13,7 @@ export interface GSTInvoiceData {
 
   // Seller
   seller: {
-    name: string;        // "Nutriwow"
+    name: string;        // "Foodondoor"
     legalName: string;   // "Foodondoor Private Limited"
     gstin: string;
     address: string;
@@ -136,7 +136,7 @@ export function openGSTInvoice(data: GSTInvoiceData) {
 <body>
   <div class="inv-header">
     <div>
-      <div class="inv-brand">Nutriwow</div>
+      <div class="inv-brand">Foodondoor</div>
       <div class="inv-brand-sub">
         ${esc(seller.legalName)}<br/>
         ${esc(seller.address)}<br/>
@@ -224,8 +224,8 @@ export function openGSTInvoice(data: GSTInvoiceData) {
 
   <div class="inv-footer">
     This is a computer-generated invoice and does not require a physical signature.<br/>
-    Thank you for shopping with Nutriwow! For queries: ${esc(seller.email)}<br/>
-    www.nutriwow.in
+    Thank you for shopping with Foodondoor! For queries: ${esc(seller.email)}<br/>
+    www.foodondoor.com
   </div>
 
   <script>window.onload = function() { window.print(); }<\/script>

@@ -98,7 +98,7 @@ export default function QuickViewModal({ product, onClose }: QuickViewModalProps
           {/* Details */}
           <div className="sm:w-3/5 flex flex-col">
             <p className="text-[10px] text-nutrigold font-semibold uppercase tracking-wide mb-1">
-              Nutriwow
+              Foodondoor
             </p>
             <h3 className="text-sm sm:text-base font-bold text-foreground leading-snug mb-2 line-clamp-3">
               {product.name}

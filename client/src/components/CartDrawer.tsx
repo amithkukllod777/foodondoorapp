@@ -577,7 +577,7 @@ export default function CartDrawer() {
             key: rzOrder.keyId,
             amount: rzOrder.amount,
             currency: "INR",
-            name: "Nutriwow",
+            name: "Foodondoor",
             description: `Order #${orderId}`,
             order_id: rzOrder.razorpayOrderId,
             prefill: {
@@ -629,7 +629,7 @@ export default function CartDrawer() {
       // ── PhonePe ──
       try {
         const baseUrl = window.location.hostname === "localhost" || window.location.hostname.includes("manus.computer")
-          ? "https://www.nutriwow.in"
+          ? "https://www.foodondoor.com"
           : window.location.origin;
         const redirectUrl = `${baseUrl}/payment-status?orderId=${orderId}&total=${finalTotal}&plan=${paymentPlan}`;
 

@@ -11,7 +11,7 @@ export default function AnnouncementBar() {
           ? `Get Extra ${coupon.discountValue}% OFF*`
           : `Flat ₹${coupon.discountValue} OFF*`
       } Use Code: ${coupon.code}`
-    : "Free Shipping on All Orders | Shop Premium Dry Fruits at Nutriwow";
+    : "Free Shipping on All Orders | Shop Premium Dry Fruits at Foodondoor";
 
   return (
     <div className="bg-nutriorange text-primary-foreground text-xs sm:text-sm font-semibold py-2 overflow-hidden">

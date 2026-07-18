@@ -15,8 +15,8 @@ export default function TermsAndConditions() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title="Terms and Conditions | Nutriwow"
-        description="Read the Terms and Conditions for using Nutriwow's website and purchasing our premium dry fruits, nuts, and healthy snacks."
+        title="Terms and Conditions | Foodondoor"
+        description="Read the Terms and Conditions for using Foodondoor's website and purchasing our premium dry fruits, nuts, and healthy snacks."
         url="/terms-and-conditions"
       />
       <AnnouncementBar />
@@ -33,21 +33,21 @@ export default function TermsAndConditions() {
             <section>
               <h2 className="text-lg font-semibold text-foreground mb-2">1. Acceptance of Terms</h2>
               <p>
-                By accessing or using the website <strong>www.nutriwow.in</strong> ("Website"), you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, please do not use our Website. These terms apply to all visitors, users, and customers.
+                By accessing or using the website <strong>www.foodondoor.com</strong> ("Website"), you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, please do not use our Website. These terms apply to all visitors, users, and customers.
               </p>
             </section>
 
             <section>
               <h2 className="text-lg font-semibold text-foreground mb-2">2. Business Information</h2>
               <p>
-                Nutriwow is a brand of <strong>Foodondoor Private Limited</strong>, a company registered under the laws of India. We sell premium dry fruits, nuts, seeds, and healthy snacks online across India.
+                Foodondoor is a brand of <strong>Foodondoor Private Limited</strong>, a company registered under the laws of India. We sell premium dry fruits, nuts, seeds, and healthy snacks online across India.
               </p>
               <p className="mt-2">
                 <strong>Registered Company Name:</strong> Foodondoor Private Limited<br />
                 <strong>Registered Address:</strong> Sherpur Square, Indore Bhopal Highway, Sehore, Madhya Pradesh, India – 466001<br />
                 <strong>FSSAI Licence No.:</strong> 11424999000246<br />
-                <strong>Email:</strong> <a href="mailto:wecare@nutriwow.in" className="text-primary underline">wecare@nutriwow.in</a><br />
-                <strong>Website:</strong> www.nutriwow.in
+                <strong>Email:</strong> <a href="mailto:wecare@foodondoor.com" className="text-primary underline">wecare@foodondoor.com</a><br />
+                <strong>Website:</strong> www.foodondoor.com
               </p>
             </section>
 
@@ -75,7 +75,7 @@ export default function TermsAndConditions() {
             <section>
               <h2 className="text-lg font-semibold text-foreground mb-2">6. Intellectual Property</h2>
               <p>
-                All content on this Website, including text, images, logos, and product descriptions, is the property of Nutriwow India and is protected by applicable intellectual property laws. You may not reproduce, distribute, or use any content without prior written permission.
+                All content on this Website, including text, images, logos, and product descriptions, is the property of Foodondoor India and is protected by applicable intellectual property laws. You may not reproduce, distribute, or use any content without prior written permission.
               </p>
             </section>
 
@@ -89,7 +89,7 @@ export default function TermsAndConditions() {
             <section>
               <h2 className="text-lg font-semibold text-foreground mb-2">8. Limitation of Liability</h2>
               <p>
-                To the maximum extent permitted by law, Nutriwow India shall not be liable for any indirect, incidental, or consequential damages arising from the use of our Website or products. Our total liability shall not exceed the amount paid by you for the specific order in question.
+                To the maximum extent permitted by law, Foodondoor India shall not be liable for any indirect, incidental, or consequential damages arising from the use of our Website or products. Our total liability shall not exceed the amount paid by you for the specific order in question.
               </p>
             </section>
 
@@ -113,9 +113,9 @@ export default function TermsAndConditions() {
                 For any questions regarding these Terms and Conditions, please contact us at:<br />
                 <strong>Company:</strong> Foodondoor Private Limited<br />
                 <strong>Address:</strong> Sherpur Square, Indore Bhopal Highway, Sehore, Madhya Pradesh – 466001<br />
-                <strong>Email:</strong> <a href="mailto:wecare@nutriwow.in" className="text-primary underline">wecare@nutriwow.in</a><br />
-                <strong>WhatsApp:</strong> +91 95463 34633<br />
-                <strong>Website:</strong> www.nutriwow.in
+                <strong>Email:</strong> <a href="mailto:wecare@foodondoor.com" className="text-primary underline">wecare@foodondoor.com</a><br />
+                <strong>WhatsApp:</strong> +91 92431 77706<br />
+                <strong>Website:</strong> www.foodondoor.com
               </p>
             </section>
 

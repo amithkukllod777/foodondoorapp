@@ -1,6 +1,6 @@
 /**
  * About Us Page
- * Company info, mission, and values for Nutriwow by Foodondoor Private Limited
+ * Company info, mission, and values for Foodondoor by Foodondoor Private Limited
  */
 
 import AnnouncementBar from "@/components/AnnouncementBar";
@@ -13,21 +13,21 @@ export default function About() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title="About Us | Nutriwow - Premium Dry Fruits & Healthy Snacks"
-        description="Learn about Nutriwow by Foodondoor Private Limited. We bring you 100% natural, premium dry fruits and healthy snacks directly from the finest farms across India."
+        title="About Us | Foodondoor - Premium Dry Fruits & Healthy Snacks"
+        description="Learn about Foodondoor by Foodondoor Private Limited. We bring you 100% natural, premium dry fruits and healthy snacks directly from the finest farms across India."
         url="/about"
         keywords="about nutriwow, nutriwow story, premium dry fruits brand India, foodondoor private limited"
         jsonLd={[{
           "@context": "https://schema.org",
           "@type": "AboutPage",
-          name: "About Nutriwow",
-          url: "https://www.nutriwow.in/about",
+          name: "About Foodondoor",
+          url: "https://www.foodondoor.com/about",
           mainEntity: {
             "@type": "Organization",
-            name: "Nutriwow",
+            name: "Foodondoor",
             legalName: "Foodondoor Private Limited",
-            url: "https://www.nutriwow.in",
-            logo: "https://www.nutriwow.in/nutriwow-logo.png",
+            url: "https://www.foodondoor.com",
+            logo: "https://www.foodondoor.com/nutriwow-logo.png",
             foundingLocation: "Sehore, Madhya Pradesh, India",
             address: {
               "@type": "PostalAddress",
@@ -39,14 +39,14 @@ export default function About() {
             },
             contactPoint: {
               "@type": "ContactPoint",
-              telephone: "+91-95463-34633",
+              telephone: "+91-92431-77706",
               contactType: "customer service",
-              email: "wecare@nutriwow.in",
+              email: "wecare@foodondoor.com",
               availableLanguage: ["English", "Hindi"]
             },
             sameAs: [
-              "https://www.facebook.com/nutriwowindia",
-              "https://www.instagram.com/nutriwowindia"
+              "https://www.facebook.com/foodondoor.in",
+              "https://www.instagram.com/foodondoor"
             ]
           }
         }]}
@@ -57,17 +57,17 @@ export default function About() {
       <main className="flex-1 py-10">
         <div className="max-w-3xl mx-auto px-4">
           <h1 className="text-3xl font-bold text-foreground mb-2">About Us</h1>
-          <p className="text-sm text-muted-foreground mb-8">Nutriwow — A brand by Foodondoor Private Limited</p>
+          <p className="text-sm text-muted-foreground mb-8">Foodondoor — A brand by Foodondoor Private Limited</p>
 
           <div className="prose prose-gray max-w-none space-y-6 text-foreground/90 text-sm leading-relaxed">
 
             <section>
               <h2 className="text-lg font-semibold text-foreground mb-2">Our Story</h2>
               <p>
-                Nutriwow was born out of a simple belief — that wholesome, premium-quality dry fruits and healthy snacks should be accessible to every Indian household. Based in <strong>Sehore, Madhya Pradesh</strong>, we started our journey with a passion for bringing the finest nuts, dried fruits, seeds, and natural snacks straight from trusted farms to your doorstep.
+                Foodondoor was born out of a simple belief — that wholesome, premium-quality dry fruits and healthy snacks should be accessible to every Indian household. Based in <strong>Sehore, Madhya Pradesh</strong>, we started our journey with a passion for bringing the finest nuts, dried fruits, seeds, and natural snacks straight from trusted farms to your doorstep.
               </p>
               <p>
-                As a brand of <strong>Foodondoor Private Limited</strong>, Nutriwow combines deep-rooted knowledge of India's rich agricultural heritage with modern quality standards. Every product we offer is carefully sourced, rigorously tested, and thoughtfully packaged to preserve its natural goodness.
+                As a brand of <strong>Foodondoor Private Limited</strong>, Foodondoor combines deep-rooted knowledge of India's rich agricultural heritage with modern quality standards. Every product we offer is carefully sourced, rigorously tested, and thoughtfully packaged to preserve its natural goodness.
               </p>
             </section>
 
@@ -79,7 +79,7 @@ export default function About() {
             </section>
 
             <section>
-              <h2 className="text-lg font-semibold text-foreground mb-2">Why Choose Nutriwow?</h2>
+              <h2 className="text-lg font-semibold text-foreground mb-2">Why Choose Foodondoor?</h2>
               <ul className="list-disc pl-5 space-y-1 mt-2">
                 <li><strong>100% Natural:</strong> No artificial colours, flavours, or preservatives. What you see is what you get — pure, natural goodness.</li>
                 <li><strong>Lab Tested & FSSAI Certified:</strong> Every batch is tested for quality and safety. We are fully FSSAI licensed, ensuring our products meet the highest food safety standards in India.</li>
@@ -103,12 +103,12 @@ export default function About() {
               <h2 className="text-lg font-semibold text-foreground mb-2">Company Information</h2>
               <p>
                 <strong>Legal Entity:</strong> Foodondoor Private Limited<br />
-                <strong>Brand:</strong> Nutriwow<br />
+                <strong>Brand:</strong> Foodondoor<br />
                 <strong>FSSAI Lic. No:</strong> 11424999000246<br />
                 <strong>Registered Address:</strong> Sherpur Square, Indore Bhopal Highway, Sehore, Madhya Pradesh – 466001<br />
-                <strong>Email:</strong> <a href="mailto:wecare@nutriwow.in" className="text-primary underline">wecare@nutriwow.in</a><br />
-                <strong>Phone / WhatsApp:</strong> <a href="https://wa.me/919546334633" className="text-primary underline">+91 95463 34633</a><br />
-                <strong>Website:</strong> <a href="https://www.nutriwow.in" className="text-primary underline">www.nutriwow.in</a>
+                <strong>Email:</strong> <a href="mailto:wecare@foodondoor.com" className="text-primary underline">wecare@foodondoor.com</a><br />
+                <strong>Phone / WhatsApp:</strong> <a href="https://wa.me/919243177706" className="text-primary underline">+91 92431 77706</a><br />
+                <strong>Website:</strong> <a href="https://www.foodondoor.com" className="text-primary underline">www.foodondoor.com</a>
               </p>
             </section>
 
@@ -116,9 +116,9 @@ export default function About() {
               <h2 className="text-lg font-semibold text-foreground mb-2">Connect With Us</h2>
               <p>
                 Follow us on social media for the latest products, offers, and healthy snacking tips:<br />
-                <strong>Facebook:</strong> <a href="https://www.facebook.com/nutriwowindia" className="text-primary underline" target="_blank" rel="noopener noreferrer">facebook.com/nutriwowindia</a><br />
-                <strong>Instagram:</strong> <a href="https://www.instagram.com/nutriwowindia" className="text-primary underline" target="_blank" rel="noopener noreferrer">instagram.com/nutriwowindia</a><br />
-                <strong>WhatsApp:</strong> <a href="https://wa.me/919546334633" className="text-primary underline" target="_blank" rel="noopener noreferrer">+91 95463 34633</a>
+                <strong>Facebook:</strong> <a href="https://www.facebook.com/foodondoor.in" className="text-primary underline" target="_blank" rel="noopener noreferrer">facebook.com/foodondoor.in</a><br />
+                <strong>Instagram:</strong> <a href="https://www.instagram.com/foodondoor" className="text-primary underline" target="_blank" rel="noopener noreferrer">instagram.com/foodondoor</a><br />
+                <strong>WhatsApp:</strong> <a href="https://wa.me/919243177706" className="text-primary underline" target="_blank" rel="noopener noreferrer">+91 92431 77706</a>
               </p>
             </section>
 

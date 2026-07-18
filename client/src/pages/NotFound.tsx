@@ -12,7 +12,7 @@ export default function NotFound() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SEO
-        title="Page Not Found | Nutriwow"
+        title="Page Not Found | Foodondoor"
         description="The page you're looking for doesn't exist. Browse our premium dry fruits and healthy snacks collection."
         noIndex={true}
       />

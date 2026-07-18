@@ -1,4 +1,4 @@
-// Nutriwow Service Worker — vanilla, no Workbox
+// Foodondoor Service Worker — vanilla, no Workbox
 const CACHE_VERSION = 'nutriwow-v1';
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const API_CACHE = `${CACHE_VERSION}-api`;
@@ -19,7 +19,7 @@ self.addEventListener('install', (event) => {
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Nutriwow — Offline</title>
+  <title>Foodondoor — Offline</title>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:'Poppins',sans-serif;background:#FAF9F6;display:flex;

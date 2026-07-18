@@ -337,7 +337,7 @@ function TransactionalTab() {
       title: "Order Confirmed",
       icon: <ShoppingBag className="w-5 h-5 text-green-600" />,
       description: "Sent automatically when customer places an order",
-      preview: "Hi {name}! Your Nutriwow order #{orderId} has been placed! Total: ₹{total}. Payment: {method}. Delivery in 3-5 business days.",
+      preview: "Hi {name}! Your Foodondoor order #{orderId} has been placed! Total: ₹{total}. Payment: {method}. Delivery in 3-5 business days.",
       trigger: "Auto — on order placed",
     },
     {
@@ -345,7 +345,7 @@ function TransactionalTab() {
       title: "Order Shipped",
       icon: <Truck className="w-5 h-5 text-blue-600" />,
       description: "Sent when admin marks order as shipped",
-      preview: "Great news {name}! Your Nutriwow order #{orderId} has been shipped! AWB: {awb}. Track your order at: {trackingUrl}",
+      preview: "Great news {name}! Your Foodondoor order #{orderId} has been shipped! AWB: {awb}. Track your order at: {trackingUrl}",
       trigger: "Auto — on order shipped",
     },
     {
@@ -353,7 +353,7 @@ function TransactionalTab() {
       title: "Order Delivered",
       icon: <Package className="w-5 h-5 text-purple-600" />,
       description: "Sent when order is marked as delivered",
-      preview: "Hi {name}! Your Nutriwow order #{orderId} has been delivered! We hope you love your products.",
+      preview: "Hi {name}! Your Foodondoor order #{orderId} has been delivered! We hope you love your products.",
       trigger: "Auto — on order delivered",
     },
     {
@@ -361,7 +361,7 @@ function TransactionalTab() {
       title: "Cart Recovery",
       icon: <RotateCcw className="w-5 h-5 text-orange-600" />,
       description: "Sent to customers who left items in cart for 45+ minutes",
-      preview: "Hi {name}! You left some items in your Nutriwow cart. Total: ₹{total}. Complete your order: www.nutriwow.in",
+      preview: "Hi {name}! You left some items in your Foodondoor cart. Total: ₹{total}. Complete your order: www.foodondoor.com",
       trigger: "Auto — 45 min after cart abandoned",
     },
   ];

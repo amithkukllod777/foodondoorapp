@@ -8,14 +8,14 @@ export default function HeroBanner() {
     <section className="w-full relative overflow-hidden" aria-label="Hero Banner">
       {/* SEO H1 - visually hidden but accessible to search engines */}
       <h1 className="sr-only">
-        Nutriwow – Buy Premium Dry Fruits, Nuts, Seeds &amp; Healthy Snacks Online in India
+        Foodondoor – Buy Premium Dry Fruits, Nuts, Seeds &amp; Healthy Snacks Online in India
       </h1>
 
       {/* Hero image with text overlay */}
       <div className="relative">
         <img
           src={optImg("https://d2xsxph8kpxj0f.cloudfront.net/310519663511606631/CdmiS9X3tpMWG6J8LrtNoP/hero-banner-Ya6bc5fLKg9U7nbVsAryz7.webp", 1920)}
-          alt="Nutriwow – Premium Dry Fruits & Healthy Snacks"
+          alt="Foodondoor – Premium Dry Fruits & Healthy Snacks"
           className="w-full h-auto object-cover min-h-[260px] sm:min-h-[340px]"
           fetchPriority="high"
         />

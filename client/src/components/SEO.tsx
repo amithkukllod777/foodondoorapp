@@ -5,10 +5,10 @@
 import { Helmet } from "react-helmet-async";
 import { trpc } from "@/lib/trpc";
 
-const SITE_NAME = "Nutriwow";
-const BASE_URL = "https://www.nutriwow.in";
-const DEFAULT_IMAGE = "https://www.nutriwow.in/og-image.png"; // social share card (1200×630)
-const LOGO_URL = "https://www.nutriwow.in/nutriwow-logo.png"; // brand logo for JSON-LD
+const SITE_NAME = "Foodondoor";
+const BASE_URL = "https://www.foodondoor.com";
+const DEFAULT_IMAGE = "https://www.foodondoor.com/og-image.png"; // social share card (1200×630)
+const LOGO_URL = "https://www.foodondoor.com/nutriwow-logo.png"; // brand logo for JSON-LD
 const DEFAULT_DESCRIPTION = "Buy premium dry fruits, nuts, seeds & healthy snacks online. 100% natural, no preservatives. Free shipping across India. Shop cashews, almonds, dates & more.";
 const STATIC_META_PIXEL_ID = "1753762272279602";
 
@@ -209,7 +209,7 @@ export function buildProductJsonLd(product: {
     url: productUrl,
     sku: String(product.id),
     mpn: String(product.id),
-    brand: { "@type": "Brand", name: "Nutriwow" },
+    brand: { "@type": "Brand", name: "Foodondoor" },
     category: product.category,
     offers: {
       "@type": "Offer",
@@ -221,7 +221,7 @@ export function buildProductJsonLd(product: {
         : "https://schema.org/InStock",
       itemCondition: "https://schema.org/NewCondition",
       url: productUrl,
-      seller: { "@type": "Organization", name: "Nutriwow" },
+      seller: { "@type": "Organization", name: "Foodondoor" },
     },
     // Only emit aggregateRating when there are REAL reviews — never from
     // placeholder/seed data (Google spammy-structured-markup risk).
@@ -268,10 +268,10 @@ export function buildArticleJsonLd(post: {
     url: `${BASE_URL}/blogs/news/${post.slug}`,
     datePublished: post.createdAt ? new Date(post.createdAt).toISOString() : undefined,
     dateModified: post.updatedAt ? new Date(post.updatedAt).toISOString() : undefined,
-    author: { "@type": "Person", name: post.author || "Nutriwow Team" },
+    author: { "@type": "Person", name: post.author || "Foodondoor Team" },
     publisher: {
       "@type": "Organization",
-      name: "Nutriwow",
+      name: "Foodondoor",
       logo: { "@type": "ImageObject", url: LOGO_URL },
     },
   };
@@ -294,10 +294,10 @@ export function buildCategoryJsonLd(category: string, productCount: number) {
   return {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: `${category} - Nutriwow`,
-    description: `Buy premium ${category.toLowerCase()} online from Nutriwow. 100% natural, no preservatives. Free shipping across India.`,
+    name: `${category} - Foodondoor`,
+    description: `Buy premium ${category.toLowerCase()} online from Foodondoor. 100% natural, no preservatives. Free shipping across India.`,
     url: `${BASE_URL}/collections/${encodeURIComponent(category)}`,
     numberOfItems: productCount,
-    provider: { "@type": "Organization", name: "Nutriwow" },
+    provider: { "@type": "Organization", name: "Foodondoor" },
   };
 }

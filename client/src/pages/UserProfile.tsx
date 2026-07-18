@@ -89,7 +89,7 @@ function ReferralTab() {
 
   const code = referralData?.code || "";
   const shareLink = referralData?.shareLink || "";
-  const shareMsg = `Hey! Use my code ${code} to shop premium dry fruits on Nutriwow and get great deals! ${shareLink}`;
+  const shareMsg = `Hey! Use my code ${code} to shop premium dry fruits on Foodondoor and get great deals! ${shareLink}`;
   const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareMsg)}`;
 
   const handleCopy = () => {
@@ -198,7 +198,7 @@ function ReferralTab() {
         <div className="space-y-3">
           {[
             { step: "1", text: "Share your unique referral code with friends" },
-            { step: "2", text: "Your friend visits Nutriwow using your link" },
+            { step: "2", text: "Your friend visits Foodondoor using your link" },
             { step: "3", text: "When they place their first order, you get a Rs. 50 coupon!" },
           ].map((item) => (
             <div key={item.step} className="flex items-start gap-3">
@@ -349,7 +349,7 @@ export default function UserProfile() {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEO title="My Account" description="Manage your Nutriwow account, orders and addresses." noIndex />
+      <SEO title="My Account" description="Manage your Foodondoor account, orders and addresses." noIndex />
       <Header />
       <div className="container py-8">
         <div className="max-w-5xl mx-auto">
@@ -375,7 +375,7 @@ export default function UserProfile() {
                       ? user.name.split(" ").map(n => n[0]).join("").toUpperCase().slice(0, 2)
                       : user.mobile.slice(-2)}
                   </div>
-                  <p className="text-white font-semibold text-sm">{user.name || "Nutriwow User"}</p>
+                  <p className="text-white font-semibold text-sm">{user.name || "Foodondoor User"}</p>
                   <p className="text-white/70 text-xs">+91 {user.mobile}</p>
                 </div>
 
