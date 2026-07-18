@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "821263813135",
+    "project_id": "nutriwow",
+    "storage_bucket": "nutriwow.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:821263813135:android:54c3ddfdc8d743fe0ff17a",
+        "android_client_info": {
+          "package_name": "in.nutriwow.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDldyzIyfoFUgT4LYrbW0O2Sc-m4VHxvRo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

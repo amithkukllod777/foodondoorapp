@@ -1,0 +1,1 @@
+ALTER TABLE `products` ADD `status` enum('draft','published') DEFAULT 'published' NOT NULL;

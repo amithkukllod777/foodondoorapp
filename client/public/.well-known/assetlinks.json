@@ -1,0 +1,15 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "in.nutriwow.app",
+      "sha256_cert_fingerprints": [
+        "3C:C7:AE:F8:6D:DE:88:35:65:12:9D:64:C4:30:E9:5A:C5:50:D1:4B:51:71:4D:17:18:69:23:8C:9B:83:21:28"
+      ]
+    }
+  }
+]
